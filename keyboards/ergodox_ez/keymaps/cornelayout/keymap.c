@@ -6,16 +6,6 @@
 #define _LO 1
 #define _RA 2
 
-
-enum custom_keycodes {
-#ifdef ORYX_CONFIGURATOR
-  VRSN = EZ_SAFE_RANGE,
-#else
-  VRSN = SAFE_RANGE,
-#endif
-  RGB_SLD
-};
-
 // Mod-Taps
 // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md
 #define LST(X) LSFT_T(X)
@@ -26,6 +16,32 @@ enum custom_keycodes {
 #define RGT(X) RGUI_T(X)
 #define TAT(X) LALT_T(X)
 #define AGT(X) RALT_T(X)
+
+// Shortcuts
+#define COPY LCTL(KC_INS)
+#define CUT LSFT(KC_DEL)
+#define PASTE RSFT(KC_INS)
+
+// Modifiers
+//#define LT_ESC LT(_AD, KC_ESC)
+//#define LT_GUI LT(_AD, KC_RGUI)
+#define LT_TAB LT(_LO, KC_TAB)
+#define LT_DEL LT(_RA, KC_DEL)
+#define LT_SPC LT(_LO, KC_SPC)
+#define S_SPC LSFT_T(KC_SPC)
+#define S_TAB LSFT_T(KC_TAB)
+#define S_DEL RSFT_T(KC_DEL)
+#define LT_BSPC LT(_RA, KC_BSPC)
+
+
+enum custom_keycodes {
+#ifdef ORYX_CONFIGURATOR
+  VRSN = EZ_SAFE_RANGE,
+#else
+  VRSN = SAFE_RANGE,
+#endif
+  RGB_SLD
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -49,16 +65,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 | Lo   |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
-[_BASE] = LAYOUT_ergodox_pretty(
+[_BASE] = LAYOUT_ergodox (
   // left hand
-  _______,        _______,    _______,  _______,  _______,  _______,     _______,              _______,  _______,  _______,  _______,     _______,  _______,  _______,
-  KC_LBRC,           KC_Q,       KC_W,     KC_E,     KC_R,     KC_T,     _______,              _______,     KC_Y,     KC_U,     KC_I,        KC_O,     KC_P,      KC_RBRC,
-  LST(KC_GRV),       KC_A,       KC_S,  KC_D,        KC_F,     KC_G,                                        KC_H,     KC_J,     KC_K,        KC_L,  KC_SCLN,      RST(KC_QUOT),
-  LCT(KC_MINS), LGT(KC_Z),  TAT(KC_X),  KC_C,        KC_V,     KC_B,     _______,              _______,     KC_N,     KC_M,  KC_COMM, TAT(KC_DOT),  RGT(KC_SLSH), RCT(KC_EQL),
-  _______,         ______,   ________,  LT_ESC,    KC_TAB,                                                 S_DEL,  KC_BSLS,  _______, _______, _______,
-                                                                  _______, _______,                _______, _______,
-                                                                           _______,                _______,
-                                                          LT_BSPC, _______, _______,               _______, _______, LT_SPC,
+  KC_NO,            KC_NO,      KC_NO,  KC_NO,   KC_NO,   KC_NO,  KC_NO,             KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,        KC_NO,        KC_NO,
+  KC_LBRC,           KC_Q,       KC_W,  KC_E,    KC_R,    KC_T,   KC_NO,             KC_NO,  KC_Y,   KC_U,   KC_I,     KC_O,         KC_P,         KC_RBRC,
+  LST(KC_GRV),       KC_A,       KC_S,  KC_D,    KC_F,    KC_G,                              KC_H,   KC_J,   KC_K,     KC_L,         KC_SCLN,      RST(KC_QUOT),
+  LCT(KC_MINS), LGT(KC_Z),  TAT(KC_X),  KC_C,    KC_V,    KC_B,   KC_NO,             KC_NO,  KC_N,   KC_M,   KC_COMM,  TAT(KC_DOT),  RGT(KC_SLSH), RCT(KC_EQL),
+  KC_NO,            KC_NO,      KC_NO,  KC_ESC,  KC_TAB,                                             S_DEL,  KC_BSLS,  KC_NO,        KC_NO,        KC_NO,
+                                                                  KC_NO, KC_NO,                KC_NO, KC_NO,
+                                                                          KC_NO,               KC_NO,
+                                                          LT_BSPC, KC_NO, KC_NO,               KC_NO, KC_NO, LT_SPC
 ),
 /* Lower
    * ,-------------------------------------------------.           ,-----------------------------------------------.
@@ -80,15 +96,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
-  [_LO] = LAYOUT (
+  [_LO] = LAYOUT_ergodox (
     _______, _______, _______, _______, _______, _______,     _______,                  _______, _______, _______, _______, _______, _______, _______,
-    KC_VOLU, KC_ESC,  COPY,    KC_WH_U, CUT,     PASTE,       _______,                  _______, KC_PGUP, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3, KC_MNXT, \
-    KC_VOLD, KC_TAB,  KC_WH_L, KC_WH_D, KC_WH_R, KC_BTN3,                                        KC_HOME, KC_MS_L, KC_MS_D, KC_MS_R, KC_END,  KC_MPRV, \
-    KC_MUTE, KC_LCTL, KC_LSFT, KC_LGUI, KC_BTN1, KC_BTN2,     _______,                  _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_MPLY, \
-    _______, _______, _______, _______, _______, _______,                                        _______, _______, _______, _______, _______, _______,
+    KC_VOLU, KC_ESC,  COPY,    KC_WH_U, CUT,     PASTE,       _______,                  _______, KC_PGUP, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3, KC_MNXT,
+    KC_VOLD, KC_TAB,  KC_WH_L, KC_WH_D, KC_WH_R, KC_BTN3,                                        KC_HOME, KC_MS_L, KC_MS_D, KC_MS_R, KC_END,  KC_MPRV, 
+    KC_MUTE, KC_LCTL, KC_LSFT, KC_LGUI, KC_BTN1, KC_BTN2,     _______,                  _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_MPLY, 
+    _______, _______, _______, _______, _______,                                                          _______, _______, _______, _______, _______,
                                                               _______,  _______,    _______, _______,
                                                                         _______,    _______,
-                                                      _______, _______, _______,    _______, _______, KC_ENT \
+                                                      _______, _______, _______,    _______, _______, KC_ENT 
   ),
   /* Raise
 
@@ -111,18 +127,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
    */
-  [_RA] = LAYOUT (
+  [_RA] = LAYOUT_ergodox (
     _______, _______, _______, _______, _______, _______,     _______,         _______, _______, _______, _______, _______, _______, _______,
-    KC_PIPE, KC_EXLM, KC_AT, KC_HASH, KC_DLR,  KC_PERC,       _______,         _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSLS, \
-    KC_DOT,  KC_1,    KC_2,  KC_3,    KC_4,    KC_5,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_COMM, \
-    KC_F11,  KC_F1,   KC_F2, KC_F3,   KC_F4,   KC_F5,         _______,         _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,  \
-    _______, _______, _______, _______, _______, _______,                               _______, _______, _______, _______, _______, _______,
+    KC_PIPE, KC_EXLM, KC_AT, KC_HASH, KC_DLR,  KC_PERC,       _______,         _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSLS,
+    KC_DOT,  KC_1,    KC_2,  KC_3,    KC_4,    KC_5,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_COMM,
+    KC_F11,  KC_F1,   KC_F2, KC_F3,   KC_F4,   KC_F5,         _______,         _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,
+    _______, _______, _______, _______, _______,                                                 _______, _______, _______, _______, _______,
                                                     _______,  _______,        _______, _______,
                                                               _______,        _______,
-                                             KC_ENT, _______, _______,        _______, _______, _______, \
-
-
-  ),
+                                             KC_ENT, _______, _______,        _______, _______, _______
+  )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
