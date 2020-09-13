@@ -6,6 +6,7 @@
 #define _LO 1
 #define _RA 2
 
+
 // Mod-Taps
 // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md
 #define LST(X) LSFT_T(X)
@@ -26,12 +27,12 @@
 //#define LT_ESC LT(_AD, KC_ESC)
 //#define LT_GUI LT(_AD, KC_RGUI)
 #define LT_TAB LT(_LO, KC_TAB)
-#define LT_DEL LT(_RA, KC_DEL)
-#define LT_SPC LT(_LO, KC_SPC)
+#define LT_DEL LT(_LO, KC_DEL)
+#define LT_SPC LT(_RA, KC_SPC)
 #define S_SPC LSFT_T(KC_SPC)
 #define S_TAB LSFT_T(KC_TAB)
 #define S_DEL RSFT_T(KC_DEL)
-#define LT_BSPC LT(_RA, KC_BSPC)
+#define LT_BSPC LT(_LO, KC_BSPC)
 
 
 enum custom_keycodes {
@@ -61,11 +62,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |      |       |      |        |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
- *                                 | Bspc/|      |------|       |------|        |Spc/Up|
- *                                 | Lo   |      |      |       |      |        |      |
+ *                                 | Bspc/|      |------|       |------|        |Spc/  |
+ *                                 | LO   |      |      |       |      |        | RA   |
  *                                 `--------------------'       `----------------------'
  */
-[_BASE] = LAYOUT_ergodox (
+[_BASE] = LAYOUT_ergodox_pretty (
   // left hand
   KC_NO,            KC_NO,      KC_NO,  KC_NO,   KC_NO,   KC_NO,  KC_NO,             KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,        KC_NO,        KC_NO,
   KC_LBRC,           KC_Q,       KC_W,  KC_E,    KC_R,    KC_T,   KC_NO,             KC_NO,  KC_Y,   KC_U,   KC_I,     KC_O,         KC_P,         KC_RBRC,
@@ -96,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
-  [_LO] = LAYOUT_ergodox (
+  [_LO] = LAYOUT_ergodox_pretty (
     _______, _______, _______, _______, _______, _______,     _______,                  _______, _______, _______, _______, _______, _______, _______,
     KC_VOLU, KC_ESC,  COPY,    KC_WH_U, CUT,     PASTE,       _______,                  _______, KC_PGUP, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3, KC_MNXT,
     KC_VOLD, KC_TAB,  KC_WH_L, KC_WH_D, KC_WH_R, KC_BTN3,                                        KC_HOME, KC_MS_L, KC_MS_D, KC_MS_R, KC_END,  KC_MPRV, 
@@ -127,7 +128,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
    */
-  [_RA] = LAYOUT_ergodox (
+  [_RA] = LAYOUT_ergodox_pretty (
+
+
+    
     _______, _______, _______, _______, _______, _______,     _______,         _______, _______, _______, _______, _______, _______, _______,
     KC_PIPE, KC_EXLM, KC_AT, KC_HASH, KC_DLR,  KC_PERC,       _______,         _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSLS,
     KC_DOT,  KC_1,    KC_2,  KC_3,    KC_4,    KC_5,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_COMM,
