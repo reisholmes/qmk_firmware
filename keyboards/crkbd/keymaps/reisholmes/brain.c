@@ -108,6 +108,10 @@ void render_status_secondary(void) {
 // Tells the OLEDs what to render
 void oled_task_user(void) {
   update_log();
+  if (timer_elapsed(oled_timer) > 30000) {
+    oled_off();
+    return;
+  }
   if (is_master) {
     render_status_main();  // Renders the current keyboard state (layer, lock, caps, scroll, etc)
   } else {
