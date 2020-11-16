@@ -10,7 +10,9 @@ enum layers {
 enum keycodes {
   QWERTY = SAFE_RANGE,
   M_WIPE,
-  M_RAN64
+  M_RAN64,
+  DIS_MUTE,
+  DIS_DEAF
 };
 
 // Shortcuts
