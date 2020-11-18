@@ -14,7 +14,7 @@
 /* Macro and tapping behaviour */
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef PERMISSIVE_HOLD
-#define TAPPING_TERM 170
+#define TAPPING_TERM 180
 //#define TAPPING_FORCE_HOLD
 
 // Underglow
@@ -35,7 +35,8 @@
 #endif
 
 #ifdef OLED_DRIVER_ENABLE
-#  define OLED_DISABLE_TIMEOUT
+//#  define OLED_DISABLE_TIMEOUT
+#  define OLED_TIMEOUT 30000
 #  define OLED_FONT_H "keyboards/lily58/keymaps/reisholmes/glcdfont.c"
 #endif
 

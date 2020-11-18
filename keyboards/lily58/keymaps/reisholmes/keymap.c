@@ -6,44 +6,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  [   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  ]   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |   Q  |   W  |   E  |   R  |T/RALT|                    |Y/RALT|   U  |   I  |   O  |   P  |  -   |
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |Y/RALT|   U  |   I  |   O  |   P  |  -   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |`/SFT |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  | '/SFT|
  * |------+------+------+------+------+------| MUTE  |    |DisMute|------+------+------+------+------+------|
  * |-/LCTR|Z/LGUI|X/LALT|   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |./LALT|/_RGUI|=/RCTR|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | COPY |Esc/AD|Tab/SH| /Bks/Up /       \Spc/Lo\  |Del/SH|   \  | PASTE|
+ *                   | COPY |Esc/AD| Tab  | /Bks/Up /       \Spc/Lo\  |  Del |   \  | PASTE|
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 
 [_QW] = LAYOUT( \
-    KC_LBRC,      KC_1,      KC_2,      KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,        KC_0,         KC_RBRC, \
-    KC_TAB,       KC_Q,      KC_W,      KC_E,    KC_R,    AGT(KC_T),            AGT(KC_Y),   KC_U,    KC_I,    KC_O,        KC_P,         KC_MINS, \
-    LST(KC_GRV),  KC_A,      KC_S,      KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,        KC_SCLN,      KC_QUOT, \
-    LCT(KC_MINS), LGT(KC_Z), TAT(KC_X), KC_C,    KC_V,    KC_B, KC_MUTE,  DIS_MUTE, KC_N,    KC_M,    KC_COMM, TAT(KC_DOT), RGT(KC_SLSH), RCT(KC_EQL), \
-                                COPY,    LT_ESC,  S_TAB, LT_BSPC,            LT_SPC, S_DEL, KC_BSLS, PASTE \
+    KC_LBRC,      KC_1,      KC_2,      KC_3,    KC_4,    KC_5,                     KC_6,      KC_7,    KC_8,    KC_9,        KC_0,         KC_RBRC, \
+    KC_TAB,       KC_Q,      KC_W,      KC_E,    KC_R,    KC_T,                     AGT(KC_Y), KC_U,    KC_I,    KC_O,        KC_P,         KC_MINS, \
+    LST(KC_GRV),  KC_A,      KC_S,      KC_D,    KC_F,    KC_G,                     KC_H,      KC_J,    KC_K,    KC_L,        KC_SCLN,      KC_QUOT, \
+    LCT(KC_MINS), LGT(KC_Z), TAT(KC_X), KC_C,    KC_V,    KC_B, KC_MUTE,  DIS_MUTE, KC_N,      KC_M,    KC_COMM, TAT(KC_DOT), RGT(KC_SLSH), RCT(KC_EQL), \
+                                COPY,    LT_ESC, KC_TAB,  LT_BSPC,            LT_SPC, KC_DEL, KC_BSLS, PASTE \
 ),
 
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |Vol Up|  Esc | Copy | W_Up |  CUT | PASTE|                    | Home | PgDn | PgUp | End  |M_Btn3| Next |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |Vol Do|  Tab | W_Le | W_Do | W_Ri |M_Btn3|                    | Left | Down |  Up  | Rght |M_Btn2| Prev |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Mute | Ctrl | Shift| Gui  |M_Btn1|M_Btn2|-------.    ,-------| M_Le | M_Do | M_Up | M_Ri |M_Btn1| Play |
+ * |Vol Do|  Tab | W_Le | W_Do | W_Ri |M_Btn3|-------.    ,-------| Left | Down |  Up  | Rght |M_Btn2| Prev |
  * |------+------+------+------+------+------|       |    |DisDeaf|------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
+ * | Mute | Ctrl | Shift| Gui  |M_Btn1|M_Btn2|-------|    |-------| M_Le | M_Do | M_Up | M_Ri |M_Btn1| Play |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /  Enter/       \      \  |      |      |      |
+ *                   |      |      |      | /Enter  /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
 */
 [_LO] = LAYOUT (
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, \
     KC_VOLU, KC_ESC,  COPY,    KC_WH_U, CUT,     PASTE,                     KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_BTN3, KC_MNXT, \
     KC_VOLD, KC_TAB,  KC_WH_L, KC_WH_D, KC_WH_R, KC_BTN3,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BTN2, KC_MPRV, \
-    KC_MUTE, KC_LCTL, KC_LSFT, KC_LGUI, KC_BTN1, KC_BTN2,                   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN1, KC_MPLY, \
-    _______, _______, _______, _______, _______, _______, _______, DIS_DEAF,_______, _______, _______, _______, _______, _______, \
+    KC_MUTE, KC_LCTL, KC_LSFT, KC_LGUI, KC_BTN1, KC_BTN2, _______, DIS_DEAF,KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN1, KC_MPLY, \
                                 _______, _______, _______, KC_ENT, _______,  _______, _______, _______ \
 ),
 
