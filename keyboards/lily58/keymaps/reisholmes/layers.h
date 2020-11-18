@@ -15,6 +15,19 @@ enum keycodes {
   DIS_DEAF
 };
 
+// Define the rotation of the encoder
+#ifdef ENCODER_ENABLE
+void encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) { /* First encoder */
+        if (clockwise) {
+            tap_code(KC_VOLU);
+        } else {
+            tap_code(KC_VOLD);
+        }
+    }
+}
+#endif
+
 // Shortcuts
 #define COPY LCTL(KC_INS)
 #define CUT LSFT(KC_DEL)
