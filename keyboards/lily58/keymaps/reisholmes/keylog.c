@@ -42,6 +42,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
   #endif
   switch (keycode) {
+    case QWERTY:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_QW);
+      }
+      return false;
+      break;
+    case GAMING:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_GA);
+      }
+      return false;
+      break;
     case DIS_MUTE:
       if (record->event.pressed) {
         SEND_STRING(SS_DOWN(X_LCTL) SS_DOWN(X_LSFT) SS_TAP(X_M) SS_UP(X_LSFT) SS_UP(X_LCTL));

@@ -12,7 +12,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------| MUTE  |    |DisMute|------+------+------+------+------+------|
  * |-/LCTR|Z/LGUI|X/LALT|   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |./LALT|/_RGUI|=/RCTR|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | COPY |Esc/AD| Tab  | /Bks/Up /       \Spc/Lo\  |  Del |   \  | PASTE|
+ *                   | COPY |Esc/AD| Tab  | /Spc/Up /       \Bks/Lo\  |  Del |   \  | PASTE|
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -23,6 +23,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LST(KC_GRV),  KC_A,      KC_S,      KC_D,    KC_F,    KC_G,                     KC_H,      KC_J,    KC_K,    KC_L,        KC_SCLN,      KC_QUOT, \
     LCT(KC_MINS), LGT(KC_Z), TAT(KC_X), KC_C,    KC_V,    KC_B, KC_MUTE,  DIS_MUTE, KC_N,      KC_M,    KC_COMM, TAT(KC_DOT), RGT(KC_SLSH), RCT(KC_EQL), \
                                 COPY,    LT_ESC, KC_TAB,  LT_BSPC,            LT_SPC, KC_DEL, KC_BSLS, PASTE \
+),
+
+/* GAMING
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  ]   |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |Y/RALT|   U  |   I  |   O  |   P  |  -   |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | SFT  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  | '/SFT|
+ * |------+------+------+------+------+------| MUTE  |    |DisMute|------+------+------+------+------+------|
+ * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |./LALT|/_RGUI|=/RCTR|
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *                   | GUI  |F1/Adj| Alt  | /Bks/Up /       \Spc/Lo\  |  Del |   \  | PASTE|
+ *                   |      |      |      |/       /         \      \ |      |      |      |
+ *                   `----------------------------'           '------''--------------------'
+ */
+
+[_GA] = LAYOUT( \
+    KC_ESC,   KC_1,   KC_2,   KC_3,    KC_4,    KC_5,                     KC_6,      KC_7,    KC_8,    KC_9,        KC_0,         KC_RBRC, \
+    KC_TAB,   KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,                     AGT(KC_Y), KC_U,    KC_I,    KC_O,        KC_P,         KC_MINS, \
+    KC_LSFT,  KC_A,   KC_S,   KC_D,    KC_F,    KC_G,                     KC_H,      KC_J,    KC_K,    KC_L,        KC_SCLN,      KC_QUOT, \
+    KC_LCTRL, KC_Z,   KC_X,   KC_C,    KC_V,    KC_B, KC_MUTE,  DIS_MUTE, KC_N,      KC_M,    KC_COMM, TAT(KC_DOT), RGT(KC_SLSH), RCT(KC_EQL), \
+                    KC_LGUI, LT_F1, KC_LALT, LT_BSPC,            LT_SPC, KC_DEL, KC_BSLS, PASTE \
 ),
 
 /* LOWER
@@ -57,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |-------|    |-------|  F6  |  F7  |  F8  |  F9  |  F10 |  F12 |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /Enter  /       \      \  |      |      |      |
+ *                   |      |      |      | /       /       \ Enter\  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -73,9 +96,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Reset|      |Qwerty|      |      |PrtScr|                    | Minus|  P7  |  P8  |  P9  | Slash|NumLck|
+ * |      |Gaming|Qwerty|      |      |PrtScr|                    | Minus|  P7  |  P8  |  P9  | Slash|NumLck|
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Wipe |RgbRMo|RgbHui|RgbSai|RgbVai|BrghUp|-------.    ,-------|  P0  |  P4  |  P5  |  P6  | Dot  |CapLck|
+ * |      |RgbRMo|RgbHui|RgbSai|RgbVai|BrghUp|-------.    ,-------|  P0  |  P4  |  P5  |  P6  | Dot  |CapLck|
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |RbgTog|RgbMod|RbgHud|RgbSad|RgbVad|BrghDo|-------|    |-------| Plus |  P1  |  P2  |  P3  | Ast  |ScrLck|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -85,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_AD] = LAYOUT( \
     _______, _______,  _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, \
-    _______,   _______,  _______,  _______, _______, KC_PSCR,                   KC_PMNS, KC_P7, KC_P8, KC_P9, KC_PSLS, KC_NLCK, \
-    _______,  RGB_RMOD, RGB_HUI, RGB_SAI, RGB_VAI, KC_BRIU,                   KC_P0,   KC_P4, KC_P5, KC_P6, KC_PDOT, KC_CAPS, \
+    _______, GAMING,   QWERTY,  _______, _______, KC_PSCR,                   KC_PMNS, KC_P7, KC_P8, KC_P9, KC_PSLS, KC_NLCK, \
+    _______, RGB_RMOD, RGB_HUI, RGB_SAI, RGB_VAI, KC_BRIU,                   KC_P0,   KC_P4, KC_P5, KC_P6, KC_PDOT, KC_CAPS, \
     RGB_TOG, RGB_MOD,  RGB_HUD, RGB_SAD, RGB_VAD, KC_BRID, _______, _______, KC_PPLS, KC_P1, KC_P2, KC_P3, KC_PAST, KC_SLCK, \
-                                _______, _______, M_RAN64, KC_BSPC, KC_SPC, KC_DEL, KC_PENT, _______ \
+                                _______, _______, _______, KC_BSPC, KC_SPC, KC_DEL, KC_PENT, _______ \
 )
 };

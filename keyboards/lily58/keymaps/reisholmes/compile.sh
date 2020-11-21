@@ -10,7 +10,7 @@ make clean
 make lily58:reisholmes RGB_MATRIX_SPLIT_RIGHT=yes
 mv lily58_rev1_reisholmes.hex lily58_rev1_reisholmes-right.hex
 
-mv lily58* /mnt/c/Documents\ and\ Settings/reis_/Desktop/
-
 # must have different checksums
 md5sum lily58_rev1_reisholmes-*
+
+mv lily58* /mnt/c/Documents\ and\ Settings/reis_/Desktop/

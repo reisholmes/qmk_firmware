@@ -1,6 +1,7 @@
 // Layers
 enum layers {
   _QW,
+  _GA,
   _LO,
   _RA,
   _AD
@@ -9,8 +10,7 @@ enum layers {
 // Special Keycodes
 enum keycodes {
   QWERTY = SAFE_RANGE,
-  M_WIPE,
-  M_RAN64,
+  GAMING,
   DIS_MUTE,
   DIS_DEAF
 };
@@ -54,3 +54,4 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 #define S_TAB LSFT_T(KC_TAB)
 #define S_DEL RSFT_T(KC_DEL)
 #define LT_BSPC LT(_RA, KC_BSPC)
+#define LT_F1 LT(_AD, KC_F1)

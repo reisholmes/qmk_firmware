@@ -5,9 +5,9 @@
 extern uint8_t is_master;
 
 #define IDLE_FRAMES 5
-#define IDLE_SPEED 60
+#define IDLE_SPEED 30
 #define TAP_FRAMES 2
-#define TAP_SPEED 40
+#define TAP_SPEED 50
 #define ANIM_FRAME_DURATION 200
 #define ANIM_SIZE 512
 
@@ -16,6 +16,9 @@ uint32_t anim_timer = 0;
 uint32_t anim_sleep = 0;
 uint8_t current_idle_frame = 0;
 uint8_t current_tap_frame = 0;
+
+static long int oled_timeout = 30000;
+char wpm[16];
 
 // Bongo Cat
 static void render_anim(void) {
@@ -105,23 +108,25 @@ static void render_anim(void) {
         }
     }
 
-    if (get_current_wpm() != 000) {
+    sprintf(wpm, "%03d", get_current_wpm());
+
+    if (strcmp(wpm, "000") != 0) {
+        anim_sleep = timer_read32();
+    } else {
+        if (timer_elapsed32(anim_sleep) > oled_timeout) {
+            anim_sleep = 0;
+        }
+    }
+
+    if (timer_elapsed32(anim_sleep) > oled_timeout) {
+        oled_off();
+    } else {
         oled_on();
 
         if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
             anim_timer = timer_read32();
-            animation_phase();
-        }
 
-        anim_sleep = timer_read32();
-    } else {
-        if (timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
-            oled_off();
-        } else {
-            if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
-                anim_timer = timer_read32();
-                animation_phase();
-            }
+            animation_phase();
         }
     }
 }

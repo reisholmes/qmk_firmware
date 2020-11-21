@@ -27,13 +27,13 @@ void render_wpm(void) {
     oled_write(wpm_str, false);
 }
 // Shows if we are on Mac layout or standard Linux layout
-void render_bootmagic_status(void) {
+/*void render_bootmagic_status(void) {
   if (keymap_config.swap_lalt_lgui) {
     oled_write_P(PSTR("<Mac>"), false);
   } else {
     oled_write_P(PSTR("<Lin>"), false);
   }
-}
+}*/
 
 // Render out our current Base layout
 void render_default_layer_state(void) {
@@ -41,6 +41,9 @@ void render_default_layer_state(void) {
   switch (biton32(default_layer_state)) {
     case _QW:
       oled_write_P(PSTR(" QRTY"), false);
+      break;
+    case _GA:
+      oled_write_P(PSTR(" GAME"), false);
       break;
   }
 }
@@ -74,8 +77,6 @@ void render_keylock_status(uint8_t led_usb_state) {
   oled_write_P(PSTR("NUM "), led_usb_state & (1 << USB_LED_NUM_LOCK));
   oled_write_P(PSTR(" "), false);
   oled_write_P(PSTR("CAPS"), led_usb_state & (1 << USB_LED_CAPS_LOCK));
-  oled_write_P(PSTR(" "), false);
-  oled_write_P(PSTR("SCRL"), led_usb_state & (1 << USB_LED_SCROLL_LOCK));
 }
 
 // Modifiers
@@ -100,8 +101,8 @@ void render_keylogger_status(void) {
 // Order our Master OLED
 void render_status_main(void) {
   //render_bootmagic_status();
-  //render_default_layer_state();
   render_wpm();
+  render_default_layer_state();
   render_layer_state();
   render_keylock_status(host_keyboard_leds());
   render_mod_status(get_mods()|get_oneshot_mods());
@@ -117,12 +118,12 @@ void render_status_secondary(void) {
 
 // Tells the OLEDs what to render
 void oled_task_user(void) {
-//  update_log();
-  if (timer_elapsed(oled_timer) > 30000) {
-    oled_off();
-    return;
-  }
+  update_log();
   if (is_keyboard_master()) {
+    if (timer_elapsed(oled_timer) > 30000) {
+      oled_off();
+      return;
+    }
     render_status_main();  // Renders the current keyboard state (layer, lock, caps, scroll, etc)
   } else {
     render_status_secondary();

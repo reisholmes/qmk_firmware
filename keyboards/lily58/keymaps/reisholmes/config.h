@@ -36,7 +36,7 @@
 
 #ifdef OLED_DRIVER_ENABLE
 //#  define OLED_DISABLE_TIMEOUT
-#  define OLED_TIMEOUT 30000
+//#  define OLED_TIMEOUT 30000
 #  define OLED_FONT_H "keyboards/lily58/keymaps/reisholmes/glcdfont.c"
 #endif
 
