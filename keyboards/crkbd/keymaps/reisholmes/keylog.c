@@ -32,7 +32,6 @@ void update_log(void) {
   }
 }
 
-
 // adds keylog and allows layer persistance when switched
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   #ifdef OLED_DRIVER_ENABLE
@@ -41,7 +40,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       oled_timer = timer_read();
     }
   #endif
-  switch (keycode) {
+  /*switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QW);
@@ -61,6 +60,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-  }
+  }*/
   return true;
 };

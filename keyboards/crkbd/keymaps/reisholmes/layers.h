@@ -21,6 +21,15 @@ enum keycodes {
 // Mod-Taps
 // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md
 #define LST(X) LSFT_T(X)
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LST(KC_GRV):
+            return TAPPING_TERM - 40;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 #define RST(X) RSFT_T(X)
 #define LCT(X) LCTL_T(X)
 #define RCT(X) RCTL_T(X)

@@ -18,7 +18,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 // Define what we want to write out to master OLED
 // Shows if we are on Mac layout or standard Linux layout
-void render_bootmagic_status(void) {
+/*void render_bootmagic_status(void) {
   if (keymap_config.swap_lalt_lgui) {
     oled_write_P(PSTR("<Mac>"), false);
   } else {
@@ -34,7 +34,7 @@ void render_default_layer_state(void) {
       oled_write_P(PSTR(" QRTY"), false);
       break;
   }
-}
+}*/
 
 // Layers rule, display our current layer
 void render_layer_state(void) {
@@ -90,8 +90,10 @@ void render_keylogger_status(void) {
 
 // Order our Master OLED
 void render_status_main(void) {
-  render_bootmagic_status();
-  render_default_layer_state();
+/*  render_bootmagic_status();
+  render_default_layer_state(); */
+  oled_write_ln_P(PSTR("Reis"), false);
+  oled_write_ln_P(PSTR(""), false);
   render_layer_state();
   render_keylock_status(host_keyboard_leds());
   render_mod_status(get_mods()|get_oneshot_mods());

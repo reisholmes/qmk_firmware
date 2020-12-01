@@ -13,6 +13,7 @@
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef PERMISSIVE_HOLD
 #define TAPPING_TERM 170
+#define TAPPING_TERM_PER_KEY
 //#define TAPPING_FORCE_HOLD
 
 /* RGB options
@@ -38,7 +39,7 @@ https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgblight *
 #  define RGB_MATRIX_SPD_STEP 10
 #  define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_REACTIVE
 
-#  define DISABLE_RGB_MATRIX_SOLID_COLOR         // Static single hue, no speed support
+#  define DISABLE_RGB_MATRIX_SOLID_COLOR             // Static single hue, no speed support
 #  define DISABLE_RGB_MATRIX_ALPHAS_MODS             // Static dual hue, speed is hue for secondary hue
 #  define DISABLE_RGB_MATRIX_GRADIENT_UP_DOWN        // Static gradient top to bottom, speed controls how much gradient changes
 #  define DISABLE_RGB_MATRIX_BREATHING               // Single hue brightness cycling animation
@@ -71,7 +72,7 @@ https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgblight *
 #  define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 #  ifdef RGB_MATRIX_KEYPRESSES
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE     // Pulses keys hit to hue & value then fades value out
-//#    define DISABLE_RGB_MATRIX_SOLID_REACTIVE            // Static single hue, pulses keys hit to shifted hue then fades to current hue
+//#    define DISABLE_RGB_MATRIX_SOLID_REACTIVE            // *Static single hue, pulses keys hit to shifted hue then fades to current hue
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE       // Hue & value pulse near a single key hit then fades value out
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE  // Hue & value pulse near multiple key hits then fades value out
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS      // Hue & value pulse the same column and row of a single key hit then fades value out
