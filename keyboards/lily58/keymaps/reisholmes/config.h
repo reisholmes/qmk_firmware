@@ -22,7 +22,8 @@
 #ifdef RGBLIGHT_ENABLE
   #define RGBLED_NUM 16
   #define RGBLED_SPLIT {8,8}
-  #define RGBLIGHT_ANIMATIONS
+  // #define RGBLIGHT_ANIMATIONS
+  #define RGBLIGHT_MODE_BREATHING
   #define RGBLIGHT_SLEEP
 #endif
 
