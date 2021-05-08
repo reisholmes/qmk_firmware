@@ -88,7 +88,9 @@ https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgblight *
 
 
 #ifdef OLED_DRIVER_ENABLE
-#  define OLED_DISABLE_TIMEOUT
+#	define OLED_TIMEOUT 10000
+#	define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
+#	define OLED_UPDATE_INTERVAL 50
 #  define OLED_FONT_H "keyboards/crkbd/keymaps/reisholmes/glcdfont.c"
 #endif
 

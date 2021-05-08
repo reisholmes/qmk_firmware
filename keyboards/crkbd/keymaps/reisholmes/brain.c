@@ -12,7 +12,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (is_master) {
     return OLED_ROTATION_270;
   } else {
-    return OLED_ROTATION_180;
+    return OLED_ROTATION_270;
   }
 }
 
@@ -104,16 +104,11 @@ void render_status_main(void) {
 void render_status_secondary(void) {
 //  render_crkbd_logo();
 //  oled_scroll_left(); // Turns on scrolling
-  render_anim();
+  render_bongocat();
 }
 
 // Tells the OLEDs what to render
 void oled_task_user(void) {
-  update_log();
-  if (timer_elapsed(oled_timer) > 30000) {
-    oled_off();
-    return;
-  }
   if (is_master) {
     render_status_main();  // Renders the current keyboard state (layer, lock, caps, scroll, etc)
   } else {
