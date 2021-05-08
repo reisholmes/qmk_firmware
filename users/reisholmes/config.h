@@ -1,13 +1,15 @@
 #pragma once
 
-/* Select hand configuration */
-#define MASTER_LEFT
+#ifdef SPLIT_KEYBOARD
+    /* Select hand configuration */
+    #define MASTER_LEFT
 
-/* Definitions for a split keyboard */
-#undef USE_I2C
-#undef SSD1306OLED
-#define USE_SERIAL_PD2
-#define FORCE_NKRO
+    /* Definitions for a split keyboard */
+    #undef USE_I2C
+    #undef SSD1306OLED
+    #define USE_SERIAL_PD2
+    #define FORCE_NKRO
+#endif
 
 /* Macro and tapping behaviour */
 #define IGNORE_MOD_TAP_INTERRUPT
@@ -88,8 +90,10 @@ https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgblight *
 
 
 #ifdef OLED_DRIVER_ENABLE
-#  define OLED_DISABLE_TIMEOUT
-#  define OLED_FONT_H "keyboards/crkbd/keymaps/reisholmes/glcdfont.c"
+#  define OLED_TIMEOUT 10000
+#  define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
+#  define OLED_UPDATE_INTERVAL 50
+#  define OLED_FONT_H "users/reisholmes/oledfont.c"
 #endif
 
 /* Mouse Settings */

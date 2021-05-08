@@ -27,26 +27,26 @@ VELOCIKEY_ENABLE 				= no
 VIA_ENABLE						= no
 WPM_ENABLE						= no
 
-# Common features
+# Common features for all keyboards
 EXTRAKEY_ENABLE	= yes # Audio control and System control(+450)
 LTO_ENABLE		= yes # Makes hex file smaller
 MOUSEKEY_ENABLE	= yes # Mouse keys(+4700)
 NKRO_ENABLE		= yes # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
-RGBLIGHT_ENABLE	= yes # All keebs have RGB underlight
+RGBLIGHT_ENABLE	= yes # RGB underlight
 
-# OLED Features for Lily58Pro, CRKBD, and CRKBD polycarb
-ifeq ($($(KEYBOARD) $(WPM), yes))
+# OLED Features for Lily58Pro, CRKBD
+ifeq ($(KEYBOARD) $(WPM), crkbd/rev1/legacy yes)
 	OLED_DRIVER_ENABLE 	= yes
 	WPM_ENABLE			= yes
-# CRKBD Polycarb options for RGB matrix to ensure right hand follows lighting instructions
+	SRC += bongocat.c keylog.c
+# CRKBD options for RGB matrix to ensure right hand follows lighting instructions
 	ifeq ($(strip $(RGB_MATRIX_SPLIT_RIGHT)), yes)
 		RGB_MATRIX_ENABLE = WS2812
 	    OPT_DEFS += -DRGB_MATRIX_SPLIT_RIGHT
 	endif
 endif
 
-
-# Elite C ..
+# Bootloader selection
 BOOTLOADER = qmk-dfu
 
 
