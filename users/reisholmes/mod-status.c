@@ -34,7 +34,7 @@ static void render_logo(void) {
 
 	oled_write_P(corne_logo, false);
 #ifndef SPLIT_MODS_ENABLE
-	if (layer_state_is(CMK)) { oled_write_P(katakana, false); }
+	if (layer_state_is(ADJ)) { oled_write_P(katakana, false); }
 	else { oled_write_P(PSTR("corne"), false); }
 #else
 	oled_write_P(katakana, false);

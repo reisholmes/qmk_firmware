@@ -23,8 +23,8 @@ SPACE_CADET_ENABLE = no
 # Common features
 EXTRAKEY_ENABLE = yes
 BOOTLOADER = atmel-dfu
-BOOTMAGIC_ENABLE = lite
-OPT_DEFS += -DCAPSWORD_ENABLE
+#BOOTMAGIC_ENABLE = lite
+#OPT_DEFS += -DCAPSWORD_ENABLE
 
 # Main source file
 SRC += reisholmes.c
@@ -45,12 +45,12 @@ ifeq ($(KEYBOARD) $(TINY), crkbd/rev1/common yes)
 	MOUSEKEY_ENABLE = yes
 # Primary status with secondary WPM-driven animation
 else ifeq ($(KEYBOARD) $(WPM), crkbd/rev1/common yes)
-	RGB_MATRIX_ENABLE = yes
-	MOUSEKEY_ENABLE = yes
-	WPM_ENABLE = yes
+	MOUSEKEY_ENABLE    = yes
 	OLED_DRIVER_ENABLE = yes
+	RGB_MATRIX_ENABLE  = yes
+	WPM_ENABLE 		   = yes
 	SRC += bongocat.c
-	# Primary OLED option
+# Primary OLED option
 	ifneq ($(DOG),)
 		SRC += luna-status.c
 		OPT_DEFS += -D${DOG}

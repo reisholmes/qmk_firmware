@@ -61,12 +61,12 @@ bool process_record_user(uint16_t const keycode, keyrecord_t *record) {
 #endif
 	switch (keycode) {
 		// VIM commands
-		case Q_TH: TAP_HOLD(KC_Q, SEND_STRING(":q!"));
-		case W_TH: TAP_HOLD(KC_W, SEND_STRING(":wq"));
+		//case Q_TH: TAP_HOLD(KC_Q, SEND_STRING(":q!"));
+		//case W_TH: TAP_HOLD(KC_W, SEND_STRING(":wq"));
 		// Right hand cut copy paste
-		case DOT_TH: TAP_HOLD(KC_DOT, tap_code16(G(KC_X)));
-		case COMM_TH: TAP_HOLD(KC_COMM, tap_code16(G(KC_C)));
-		case M_TH: TAP_HOLD(KC_M, tap_code16(G(KC_V)));
+		//case DOT_TH: TAP_HOLD(KC_DOT, tap_code16(G(KC_X)));
+		//case COMM_TH: TAP_HOLD(KC_COMM, tap_code16(G(KC_C)));
+		//case M_TH: TAP_HOLD(KC_M, tap_code16(G(KC_V)));
 	}
 	return true; // Continue with unmatched keycodes
 }
