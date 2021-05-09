@@ -18,24 +18,7 @@
 #include QMK_KEYBOARD_H
 
 // Layer references
-enum layers { DEF, CMK, LWR, RSE, ADJ };
-
-// Custom dimmer indicator colors and effects
-#define RGB_BSTEEL	60, 90, 128
-#define RGB_DGRAY	50, 70, 90
-#define RGB_MODS	RGB_BSTEEL
-#define RGB_CAPS	RGB_PURPLE
-#define RGB_LAYER	RGB_DGRAY
-#if defined(KEYBOARD_bm40hsrgb) && defined(RGB_MATRIX_CUSTOM_USER)
-#	define DEF_MODE	RGB_MATRIX_CUSTOM_CANDY_WIDE
-#	define CMK_MODE	RGB_MATRIX_CUSTOM_PIXEL_RAIN
-#elif defined(RGB_MATRIX_CUSTOM_USER)
-#	define DEF_MODE	RGB_MATRIX_CUSTOM_CANDY_WIDE
-#	define CMK_MODE	RGB_MATRIX_CUSTOM_PIXEL_RAIN
-#else
-#	define DEF_MODE	RGB_MATRIX_SOLID_REACTIVE_SIMPLE
-#	define CMK_MODE	RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
-#endif
+enum layers { DEF, LWR, RSE, ADJ };
 
 // Layer and mod tap bitmasks
 // 0xFF00 bitmask

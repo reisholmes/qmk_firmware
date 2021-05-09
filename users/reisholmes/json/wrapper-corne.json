@@ -2,14 +2,12 @@
     "author": "",
     "documentation": "Wrapper based keymap",
     "keyboard": "crkbd/rev1/common",
-    "keymap": "filterpaper",
+    "keymap": "reisholmes",
     "layers": [
         [ "QWERTY", "CORNEQWERTY" ],
-        [ "COLEMAK", "CORNEBLANK" ],
         [ "LOWER", "CORNELOWER" ],
         [ "RAISE", "CORNERAISE" ],
-        [ "ADJUST", "CORNEBLANK" ],
-        [ "MOUSE", "CORNEBLANK" ]
+        [ "ADJUST", "CORNEADJUST" ]
     ],
     "layout": "LAYOUT_wrapper_split_3x6_3",
     "notes": "",
