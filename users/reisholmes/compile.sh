@@ -7,7 +7,7 @@ sudo qmk flash -kb crkbd/rev1/common -km default -bl avrdude-split-right
 make clean
 
 #Left side
-qmk flash -e WPM=yes users/reisholmes/json/corne.json -bl qmk-dfu
+qmk flash -e WPM=yes users/reisholmes/json/corne.json
 
 #Right side
-qmk flash -e WPM=yes -e RGB_MATRIX_SPLIT_RIGHT=yes users/reisholmes/json/corne.json -bl avrdude
+qmk flash -e WPM=yes users/reisholmes/json/corne.json -bl avrdude
