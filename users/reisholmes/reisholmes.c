@@ -74,8 +74,13 @@ bool process_record_user(uint16_t const keycode, keyrecord_t *record) {
 
 #ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-	// Increase for tap hold macros
-	return ((keycode & 0xFF00) == LT0_MASK) ? TAPPING_TERM + 80 : TAPPING_TERM;
+	switch (keycode) {
+        case LSFT_T(KC_GRV):
+            return TAPPING_TERM - 40;
+        default:
+			// Increase for tap hold macros
+            return ((keycode & 0xFF00) == LT0_MASK) ? TAPPING_TERM + 80 : TAPPING_TERM;
+	}
 }
 #endif
 
