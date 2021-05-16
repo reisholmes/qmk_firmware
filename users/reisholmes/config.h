@@ -40,16 +40,16 @@
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
-#  define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+// #  define RGB_DISABLE_TIMEOUT 180000
+// #  define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
 // https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgb_matrix#suspended-state-id-suspended-state
-#  define RGB_DISABLE_WHEN_USB_SUSPENDED false // turn off effects when suspended
-#  define RGB_DISABLE_TIMEOUT 180000
+#  define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
 #  define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120    // limits maximum brightness of LEDs to 200 out of 255. If not defined maximum brightness is set to 255
 #  define RGB_MATRIX_HUE_STEP 8
 #  define RGB_MATRIX_SAT_STEP 8
 #  define RGB_MATRIX_VAL_STEP 5
 #  define RGB_MATRIX_SPD_STEP 10
-#  define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
+#  define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_REACTIVE
 
 /* https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgb_matrix
    If uncommented that means it's enabled */
@@ -116,9 +116,12 @@
 #endif
 
 #ifdef SPLIT_KEYBOARD
-#	define EE_HANDS
-#   define MASTER_LEFT
-#	define SELECT_SOFT_SERIAL_SPEED 0
+// https://beta.docs.qmk.fm/using-qmk/hardware-features/feature_split_keyboard
+// #	define EE_HANDS
+#   define SPLIT_USB_DETECT
+#	define SPLIT_TRANSPORT_MIRROR
+#   define SPLIT_USB_TIMEOUT 2000
+#	define SELECT_SOFT_SERIAL_SPEED 1
 // Top right corner of right-side Corne
 #	define BOOTMAGIC_LITE_ROW_RIGHT 4
 #	define BOOTMAGIC_LITE_COLUMN_RIGHT 0
@@ -130,6 +133,6 @@
 #	define OLED_UPDATE_INTERVAL 50
 #	define OLED_FONT_H "users/reisholmes/oledfont.c"
 #	ifndef WPM_ENABLE
-#	define SPLIT_MODS_ENABLE
+#		define SPLIT_MODS_ENABLE
 #	endif
 #endif

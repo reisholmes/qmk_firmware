@@ -22,7 +22,7 @@ SPACE_CADET_ENABLE = no
 
 # Common features
 EXTRAKEY_ENABLE = yes
-BOOTLOADER = atmel-dfu
+#BOOTLOADER = atmel-dfu
 #BOOTMAGIC_ENABLE = lite
 #OPT_DEFS += -DCAPSWORD_ENABLE
 
