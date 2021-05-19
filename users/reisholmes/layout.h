@@ -22,20 +22,26 @@
 
 
 // Tap hold macro keys for keymap[]
-/// None for me but could be defined here
+#define RST(X) RSFT_T(X)
+#define LST(X) LSFT_T(X)
+#define LCT(X) LCTL_T(X)
+#define RCT(X) RCTL_T(X)
+#define LGT(X) LGUI_T(X)
+#define RGT(X) RGUI_T(X)
+#define TAT(X) LALT_T(X)
+#define AGT(X) RALT_T(X)
 
 
 // Base layout wrapper macros
 #define LAYOUT_wrapper_split_3x6_3(...) LAYOUT_split_3x6_3(__VA_ARGS__)
-#define LAYOUT_wrapper_ortho_4x12(...) LAYOUT_ortho_4x12(__VA_ARGS__)
-#define LAYOUT_wrapper_planck_mit(...) LAYOUT_planck_mit(__VA_ARGS__)
+#define LAYOUT_wrapper_reviung39(...) LAYOUT_reviung39(__VA_ARGS__)
 #define LAYOUT_wrapper_all(...) LAYOUT_all(__VA_ARGS__)
 
 
 // Shared 3x12
 /* Qwerty
    * ,-----------------------------------------.---,-----------------------------------------.
-   * | [    |   Q  |   W  |   E  |   R  |T/RALT|   |Y/RALT|   U  |   I  |   O  |   P  | ]    |
+   * | [    |   Q  |   W  |   E  |   R  |T/LALT|   |Y/RALT|   U  |   I  |   O  |   P  | ]    |
    * |------+------+------+------+------+------|   |------+------+------+------+------+------|
    * |`/LSFT|   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |   ;  |'/RSFT|
    * |------+------+------+------+------+------|   |------+------+------+------+------+------|
@@ -43,9 +49,9 @@
    * `------+------+------+------+------+------+---+------+------+------+------+------+------'
 */
 #define QWERTY \
-	KC_LBRC,         KC_Q,         KC_W, 		 KC_E, KC_R, LALT_T(KC_T),      RALT_T(KC_Y), KC_U, KC_I,    KC_O, 		     KC_P,    		  KC_RBRC, \
-    LSFT_T(KC_GRV),  KC_A,         KC_S, 		 KC_D, KC_F, KC_G,              KC_H,         KC_J, KC_K,	 KC_L, 			 KC_SCLN,		  RSFT_T(KC_QUOT), \
-	LCTL_T(KC_MINS), LGUI_T(KC_Z), LALT_T(KC_X), KC_C, KC_V, KC_B,              KC_N, 		  KC_M, KC_COMM, RALT_T(KC_DOT), RGUI_T(KC_SLSH), RCTL_T(KC_EQL)
+	KC_LBRC,      KC_Q,      KC_W, 		KC_E, KC_R, TAT(KC_T),      AGT(KC_Y),   KC_U, KC_I,    KC_O, 		 KC_P,    	   KC_RBRC, \
+    LST(KC_GRV),  KC_A,      KC_S, 		KC_D, KC_F, KC_G,           KC_H,        KC_J, KC_K,	KC_L,		 KC_SCLN,	   RST(KC_QUOT), \
+	LCT(KC_MINS), LGT(KC_Z), TAT(KC_X), KC_C, KC_V, KC_B,           KC_N, 		 KC_M, KC_COMM, AGT(KC_DOT), RGT(KC_SLSH), RCT(KC_EQL)
 
 /* Lower
    * ,-----------------------------------------.---,-----------------------------------------.
@@ -91,18 +97,19 @@
 
 
 // Last row
-//                   Esc/Adjust,   Tab/LShift,     Bks/Raise           Spc/Lower,    Del/RShift,     Backslash
-#define CORNEQWERTY  LT(3,KC_ESC), LSFT_T(KC_TAB), LT(2,KC_BSPC),      LT(1,KC_SPC), RSFT_T(KC_DEL), KC_BSLS \
-#define PLANCKQWERTY KC_DEL, ALT_T(KC_VOLD), CTL_T(KC_VOLU), KC_LGUI, LT(2,KC_SPC), RSFT_T(KC_SPC), RSFT_T(KC_SPC), LT(3,KC_SPC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+//                   Esc/Adjust,   Tab/LShift,  Bks/Raise           Spc/Lower,    Del/RShift,  Backslash
+#define CORNEQWERTY  LT(3,KC_ESC), LST(KC_TAB), LT(2,KC_BSPC),      LT(1,KC_SPC), RST(KC_DEL), KC_BSLS
+//						Bks/Raise	   Tab/Adjust    Spc/Lower
+#define REVIUNG39QWERTY LT(2,KC_BSPC), LT(3,KC_TAB), LT(1,KC_SPC)
 
-#define CORNELOWER  _______, _______,  KC_ENT, _______, _______, _______ \
-#define PLANCKLOWER _______, _______, _______, _______, _______, _______, _______, MO(4),   KC_HOME, KC_PGDN, KC_PGUP, KC_END
+#define CORNELOWER  _______, _______,  KC_ENT, _______, _______, _______
+#define REVIUNG39LOWER KC_ESC, RST(KC_DEL),  _______
 
-#define CORNERAISE  _______, _______, _______, KC_ENT,  _______, _______ \
-#define PLANCKRAISE _______, _______, _______, _______, MO(4),   _______, _______, _______, _______, _______, _______, _______
+#define CORNERAISE  _______, _______, _______, KC_ENT,  _______, _______
+#define REVIUNG39RAISE _______, _______, KC_ENT
 
-#define CORNEADJUST XXXXXXX, _______, KC_BSPC, KC_SPC, KC_DEL,  KC_PENT \
-#define PLANCKBLANK _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+#define CORNEADJUST XXXXXXX, _______, KC_BSPC, KC_SPC, KC_DEL,  KC_PENT
+#define REVIUNG39ADJUST _______, _______, KC_BSLS
 
 
 // Boardsource The Mark 65

@@ -1,0 +1,15 @@
+{
+    "author": "",
+    "documentation": "Wrapper based keymap",
+    "keyboard": "reviung39",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "QWERTY", "REVIUNG39QWERTY" ],
+        [ "LOWER", "REVIUNG39LOWER" ],
+        [ "RAISE", "REVIUNG39RAISE" ],
+        [ "ADJUST", "REVIUNG39ADJUST" ]
+    ],
+    "layout": "LAYOUT_wrapper_reviung39",
+    "notes": "",
+    "version": 1
+}
