@@ -20,23 +20,32 @@
 #include "layout.h"
 
 // Common QMK settings
+// Tapping Terms
 #define TAPPING_TERM 170
 #define TAPPING_TERM_PER_KEY
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
+#undef PERMISSIVE_HOLD
 #define PERMISSIVE_HOLD_PER_KEY
 #define IGNORE_MOD_TAP_INTERRUPT
-#define TAP_CODE_DELAY 50
+// #define TAP_CODE_DELAY 50
 #define LAYER_STATE_8BIT // 8-layer limit, saves ~462 bytes
-#define GRAVE_ESC_SHIFT_OVERRIDE
+// #define GRAVE_ESC_SHIFT_OVERRIDE
 
 #ifdef RGBLIGHT_ENABLE
 #  undef RGBLED_NUM
-#  define RGBLED_NUM 27
+#  if defined(KEYBOARD_reviung39)
+#     define RGB_DI_PIN D3
+#     define RGBLED_NUM 11
+#  else
+#  	define RGBLED_NUM 27
+#  endif
+#  define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_BREATHING
 #  define RGBLIGHT_HUE_STEP 8
 #  define RGBLIGHT_SAT_STEP 8
 #  define RGBLIGHT_VAL_STEP 5
 #  define RGBLIGHT_LIMIT_VAL 120
 #  define RGBLIGHT_ANIMATIONS
+#  define RGBLIGHT_SLEEP
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
@@ -120,7 +129,7 @@
 // #	define EE_HANDS
 #   define SPLIT_USB_DETECT
 #	define SPLIT_TRANSPORT_MIRROR
-#   define SPLIT_USB_TIMEOUT 2000
+#   define SPLIT_USB_TIMEOUT 5000
 #	define SELECT_SOFT_SERIAL_SPEED 1
 // Top right corner of right-side Corne
 #	define BOOTMAGIC_LITE_ROW_RIGHT 4
@@ -128,7 +137,7 @@
 #endif
 
 #ifdef OLED_DRIVER_ENABLE
-#	define OLED_TIMEOUT 10000
+#	define OLED_TIMEOUT 20000
 #	define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
 #	define OLED_UPDATE_INTERVAL 50
 #	define OLED_FONT_H "users/reisholmes/oledfont.c"

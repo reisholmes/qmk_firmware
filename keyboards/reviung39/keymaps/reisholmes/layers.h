@@ -8,7 +8,7 @@ enum layers {
 
 // Special Keycodes
 enum keycodes {
-  QWERTY = SAFE_RANGE,
+  // QWERTY = SAFE_RANGE,
   M_WIPE,
   M_RAN64
 };

@@ -29,16 +29,11 @@ EXTRAKEY_ENABLE = yes
 # Main source file
 SRC += reisholmes.c
 
-# Exclude LTO for Planck
-ifneq ($(PLATFORM), CHIBIOS)
-	LTO_ENABLE = yes
-endif
-
-ifneq ($(KEYBOARD),$(filter $(KEYBOARD), crkbd/rev1/common))
-	RGB_MATRIX_ENABLE = yes
-	SRC += rgb-matrix.c
-	RGB_MATRIX_CUSTOM_USER = yes
-endif
+#ifneq ($(KEYBOARD),$(filter $(KEYBOARD), crkbd/rev1/common))
+#	RGB_MATRIX_ENABLE = yes
+#	SRC += rgb-matrix.c
+#	RGB_MATRIX_CUSTOM_USER = yes
+#endif
 
 # Corne keyboard features
 ifeq ($(KEYBOARD) $(TINY), crkbd/rev1/common yes)
@@ -62,4 +57,10 @@ else ifeq ($(strip $(KEYBOARD)), crkbd/rev1/common)
 	MOUSEKEY_ENABLE = yes
 	OLED_DRIVER_ENABLE = yes
 	SRC += mod-status.c bongocat.c
+endif
+
+# Reviung39 keyboard features
+ifeq ($(KEYBOARD) $(REVIUNG39), reviung39 yes)
+	RGBLIGHT_ENABLE 	= yes
+	OLED_DRIVER_ENABLE 	= no
 endif
