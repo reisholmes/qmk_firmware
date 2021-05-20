@@ -129,15 +129,15 @@
 // #	define EE_HANDS
 #   define SPLIT_USB_DETECT
 #	define SPLIT_TRANSPORT_MIRROR
-#   define SPLIT_USB_TIMEOUT 5000
-#	define SELECT_SOFT_SERIAL_SPEED 1
+#   define SPLIT_USB_TIMEOUT 300000 // 5 mins
+//#	define SELECT_SOFT_SERIAL_SPEED 1
 // Top right corner of right-side Corne
 #	define BOOTMAGIC_LITE_ROW_RIGHT 4
 #	define BOOTMAGIC_LITE_COLUMN_RIGHT 0
 #endif
 
 #ifdef OLED_DRIVER_ENABLE
-#	define OLED_TIMEOUT 20000
+#	define OLED_TIMEOUT 300000 // 5 mins
 #	define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
 #	define OLED_UPDATE_INTERVAL 50
 #	define OLED_FONT_H "users/reisholmes/oledfont.c"

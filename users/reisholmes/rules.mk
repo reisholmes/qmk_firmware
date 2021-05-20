@@ -40,10 +40,12 @@ ifeq ($(KEYBOARD) $(TINY), crkbd/rev1/common yes)
 	MOUSEKEY_ENABLE = yes
 # Primary status with secondary WPM-driven animation
 else ifeq ($(KEYBOARD) $(WPM), crkbd/rev1/common yes)
-	MOUSEKEY_ENABLE    = yes
-	OLED_DRIVER_ENABLE = yes
-	RGB_MATRIX_ENABLE  = yes
-	WPM_ENABLE 		   = yes
+    #https://beta.docs.qmk.fm/developing-qmk/qmk-reference/config_options
+	MOUSEKEY_ENABLE    		= yes
+	NO_USB_STARTUP_CHECK	= yes
+	OLED_DRIVER_ENABLE		= yes
+	RGB_MATRIX_ENABLE  		= yes
+	WPM_ENABLE 		   		= yes
 	SRC += bongocat.c
 # Primary OLED option
 	ifneq ($(DOG),)
