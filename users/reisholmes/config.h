@@ -21,13 +21,13 @@
 
 // Common QMK settings
 // Tapping Terms
+#define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_TERM 170
 #define TAPPING_TERM_PER_KEY
-// #define PERMISSIVE_HOLD
-#undef PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
 #define PERMISSIVE_HOLD_PER_KEY
 #define IGNORE_MOD_TAP_INTERRUPT
-// #define TAP_CODE_DELAY 50
+#define TAP_CODE_DELAY 50
 #define LAYER_STATE_8BIT // 8-layer limit, saves ~462 bytes
 // #define GRAVE_ESC_SHIFT_OVERRIDE
 
@@ -52,7 +52,9 @@
 // #  define RGB_DISABLE_TIMEOUT 180000
 // #  define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
 // https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgb_matrix#suspended-state-id-suspended-state
-#  define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
+//#  define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
+#  define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
+#  define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
 #  define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120    // limits maximum brightness of LEDs to 200 out of 255. If not defined maximum brightness is set to 255
 #  define RGB_MATRIX_HUE_STEP 8
 #  define RGB_MATRIX_SAT_STEP 8
@@ -127,17 +129,17 @@
 #ifdef SPLIT_KEYBOARD
 // https://beta.docs.qmk.fm/using-qmk/hardware-features/feature_split_keyboard
 // #	define EE_HANDS
-#   define SPLIT_USB_DETECT
 #	define SPLIT_TRANSPORT_MIRROR
-#   define SPLIT_USB_TIMEOUT 300000 // 5 mins
-//#	define SELECT_SOFT_SERIAL_SPEED 1
+#   define SPLIT_USB_DETECT
+#   define SPLIT_USB_TIMEOUT 2000
+#	define SELECT_SOFT_SERIAL_SPEED 1
 // Top right corner of right-side Corne
 #	define BOOTMAGIC_LITE_ROW_RIGHT 4
 #	define BOOTMAGIC_LITE_COLUMN_RIGHT 0
 #endif
 
 #ifdef OLED_DRIVER_ENABLE
-#	define OLED_TIMEOUT 300000 // 5 mins
+#	define OLED_TIMEOUT 20000
 #	define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
 #	define OLED_UPDATE_INTERVAL 50
 #	define OLED_FONT_H "users/reisholmes/oledfont.c"

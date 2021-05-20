@@ -4,12 +4,12 @@
     "keyboard": "crkbd/rev1/common",
     "keymap": "reisholmes",
     "layers": [
-        [ "QWERTY", "CORNEQWERTY" ],
+        [ "HRM(QWERTY)", "CORNEQWERTY" ],
         [ "LOWER", "CORNELOWER" ],
         [ "RAISE", "CORNERAISE" ],
         [ "ADJUST", "CORNEADJUST" ]
     ],
-    "layout": "LAYOUT_wrapper_split_3x6_3",
+    "layout": "CORNE_wrapper",
     "notes": "",
     "version": 1
 }

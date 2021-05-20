@@ -4,12 +4,12 @@
     "keyboard": "reviung39",
     "keymap": "reisholmes",
     "layers": [
-        [ "QWERTY", "REVIUNG39QWERTY" ],
+        [ "(HRM)QWERTY", "REVIUNG39QWERTY" ],
         [ "LOWER", "REVIUNG39LOWER" ],
         [ "RAISE", "REVIUNG39RAISE" ],
         [ "ADJUST", "REVIUNG39ADJUST" ]
     ],
-    "layout": "LAYOUT_wrapper_reviung39",
+    "layout": "REVIUNG39_wrapper",
     "notes": "",
     "version": 1
 }

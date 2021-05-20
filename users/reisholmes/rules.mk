@@ -22,18 +22,11 @@ SPACE_CADET_ENABLE = no
 
 # Common features
 EXTRAKEY_ENABLE = yes
-#BOOTLOADER = atmel-dfu
-#BOOTMAGIC_ENABLE = lite
+LTO_ENABLE = yes # Makes hex file smaller but breaks legacy macros 
 #OPT_DEFS += -DCAPSWORD_ENABLE
 
 # Main source file
 SRC += reisholmes.c
-
-#ifneq ($(KEYBOARD),$(filter $(KEYBOARD), crkbd/rev1/common))
-#	RGB_MATRIX_ENABLE = yes
-#	SRC += rgb-matrix.c
-#	RGB_MATRIX_CUSTOM_USER = yes
-#endif
 
 # Corne keyboard features
 ifeq ($(KEYBOARD) $(TINY), crkbd/rev1/common yes)
@@ -47,6 +40,14 @@ else ifeq ($(KEYBOARD) $(WPM), crkbd/rev1/common yes)
 	RGB_MATRIX_ENABLE  		= yes
 	WPM_ENABLE 		   		= yes
 	SRC += bongocat.c
+
+# My corne has elite-c on left and pro-micro on right
+	ifeq ($(RIGHT), yes)
+		BOOTLOADER = caterina
+	else
+		BOOTLOADER = atmel-dfu
+	endif
+
 # Primary OLED option
 	ifneq ($(DOG),)
 		SRC += luna-status.c
@@ -63,6 +64,7 @@ endif
 
 # Reviung39 keyboard features
 ifeq ($(KEYBOARD) $(REVIUNG39), reviung39 yes)
+	MOUSEKEY_ENABLE 	= yes
 	RGBLIGHT_ENABLE 	= yes
 	OLED_DRIVER_ENABLE 	= no
 endif
