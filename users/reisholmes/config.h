@@ -50,7 +50,6 @@
 
 #ifdef RGB_MATRIX_ENABLE
 // #  define RGB_DISABLE_TIMEOUT 180000
-// #  define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
 // https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgb_matrix#suspended-state-id-suspended-state
 //#  define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
 #  define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
@@ -131,17 +130,17 @@
 // #	define EE_HANDS
 #	define SPLIT_TRANSPORT_MIRROR
 #   define SPLIT_USB_DETECT
-#   define SPLIT_USB_TIMEOUT 2000
-#	define SELECT_SOFT_SERIAL_SPEED 1
+#   define SPLIT_USB_TIMEOUT 1000
+//#	define SELECT_SOFT_SERIAL_SPEED 1
 // Top right corner of right-side Corne
-#	define BOOTMAGIC_LITE_ROW_RIGHT 4
-#	define BOOTMAGIC_LITE_COLUMN_RIGHT 0
+//#	define BOOTMAGIC_LITE_ROW_RIGHT 4
+//#	define BOOTMAGIC_LITE_COLUMN_RIGHT 0
 #endif
 
 #ifdef OLED_DRIVER_ENABLE
-#	define OLED_TIMEOUT 20000
+#	define OLED_TIMEOUT 60000
 #	define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
-#	define OLED_UPDATE_INTERVAL 50
+#	define OLED_UPDATE_INTERVAL 200
 #	define OLED_FONT_H "users/reisholmes/oledfont.c"
 #	ifndef WPM_ENABLE
 #		define SPLIT_MODS_ENABLE
