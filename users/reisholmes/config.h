@@ -130,7 +130,7 @@
 // #	define EE_HANDS
 #	define SPLIT_TRANSPORT_MIRROR
 #   define SPLIT_USB_DETECT
-#   define SPLIT_USB_TIMEOUT 1000
+#   define SPLIT_USB_TIMEOUT 500
 //#	define SELECT_SOFT_SERIAL_SPEED 1
 // Top right corner of right-side Corne
 //#	define BOOTMAGIC_LITE_ROW_RIGHT 4

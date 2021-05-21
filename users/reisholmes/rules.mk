@@ -1,7 +1,6 @@
 # Disable unused features
 VIA_ENABLE = no
 WPM_ENABLE = no
-NKRO_ENABLE = no
 AUDIO_ENABLE = no
 STENO_ENABLE = no
 LEADER_ENABLE = no
@@ -20,8 +19,9 @@ SWAP_HANDS_ENABLE = no
 RGB_MATRIX_ENABLE = no
 SPACE_CADET_ENABLE = no
 
-# Common features
+# Common features enabled
 EXTRAKEY_ENABLE = yes
+NKRO_ENABLE = yes
 LTO_ENABLE = yes # Makes hex file smaller but breaks legacy macros 
 #OPT_DEFS += -DCAPSWORD_ENABLE
 
