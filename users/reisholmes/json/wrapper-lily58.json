@@ -1,0 +1,13 @@
+{
+    "keyboard": "lily58/rev1",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMLILY58(LILY58_BASE)" ],
+		[ "LILY58_LOWER" ],
+		[ "LILY58_RAISE" ],
+		[ "LILY58_ADJUST" ],
+		[ "LILY58_SYMBOLS" ],
+		[ "LILY58_GAME" ]
+    ],
+    "layout": "LAYOUT_lily58_w"
+}

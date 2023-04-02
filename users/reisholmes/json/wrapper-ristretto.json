@@ -1,0 +1,11 @@
+{
+    "keyboard": "ristretto",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRM(_QWERTY)", "RISTRETTOQWERTY" ],
+        [ "_LOWER", "RISTRETTOLOWER" ],
+        [ "_RAISE", "RISTRETTORAISE" ],
+        [ "_ADJUST", "RISTRETTOADJUST" ]
+    ],
+    "layout": "LAYOUT_ristretto_w"
+}

@@ -1,0 +1,13 @@
+{
+    "keyboard": "v4n4g0rth0n/v2",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "__BASE_V4N_NUMROW__", "HRM(_BASE)", "_BASE_4KEY_BOTROW"],
+		[ "__LOWER_V4N_NUMROW__", "_LOWER", "_LOWER_4KEY_BOTROW"],
+		[ "__RAISE_V4N_NUMROW__", "_RAISE", "_RAISE_4KEY_BOTROW"],
+		[ "__ADJUST_V4N_NUMROW__", "_ADJUST", "_ADJUST_4KEY_BOTROW"],
+		[ "__SYMBOLS_V4N_NUMROW__", "_SYMBOLS", "_SYMBOLS_4KEY_BOTROW"],
+		[ "__BASE_V4N_NUMROW__", "_GAME_V4N", "_GAME_V4N_4KEY_BOTROW" ]
+    ],
+    "layout": "LAYOUT_v4n_w"
+}

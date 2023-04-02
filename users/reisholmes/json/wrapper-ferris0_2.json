@@ -1,0 +1,12 @@
+{
+    "keyboard": "ferris/0_2/compact",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "C_30(HRM(_BASE))", "_BASE_2KEY_BOTROW" ],
+		[ "C_30(_LOWER)", "_LOWER_2KEY_BOTROW" ],
+		[ "C_30(_RAISE)", "_RAISE_2KEY_BOTROW" ],
+		[ "C_30(_ADJUST)", "_ADJUST_2KEY_BOTROW" ],
+		[ "C_30(_SYMBOLS)", "_SYMBOLS_2KEY_BOTROW" ]
+    ],
+	"layout": "LAYOUT_30key_w"
+}

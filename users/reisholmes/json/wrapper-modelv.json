@@ -1,0 +1,12 @@
+{
+    "keyboard": "matthewdias/model_v",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRM(_BASE)", "_BASE_4KEY_BOTROW" ],
+		[ "_LOWER", "_LOWER_4KEY_BOTROW" ],
+		[ "_RAISE", "_RAISE_4KEY_BOTROW" ],
+		[ "_ADJUST", "_ADJUST_4KEY_BOTROW" ],
+		[ "_SYMBOLS", "_SYMBOLS_4KEY_BOTROW" ]
+    ],
+    "layout": "LAYOUT_modelv_w"
+}

@@ -1,0 +1,13 @@
+{
+    "keyboard": "thevankeyboards/v4n4g0n",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "__BASE_V4N_NUMROW__", "HRM(_BASE)", "_BASE_5KEY_BOTROW"],
+		[ "__LOWER_V4N_NUMROW__", "_LOWER", "_LOWER_5KEY_BOTROW"],
+		[ "__RAISE_V4N_NUMROW__", "_RAISE", "_RAISE_5KEY_BOTROW"],
+		[ "__ADJUST_V4N_NUMROW__", "_ADJUST", "_ADJUST_5KEY_BOTROW"],
+		[ "__SYMBOLS_V4N_NUMROW__", "_SYMBOLS", "_SYMBOLS_5KEY_BOTROW"],
+		[ "__BASE_V4N_NUMROW__", "_GAME_V4N", "_GAME_V4N_5KEY_BOTROW" ]
+    ],
+    "layout": "LAYOUT_v4n_w"
+}

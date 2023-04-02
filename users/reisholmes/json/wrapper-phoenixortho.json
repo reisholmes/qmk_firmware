@@ -1,0 +1,12 @@
+{
+    "keyboard": "checkerboards/phoenix45_ortho",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMPO(PHOENIXORTHO_BASE)" ],
+		[ "PHOENIXORTHO_LOWER" ],
+		[ "PHOENIXORTHO_RAISE" ],
+		[ "PHOENIXORTHO_ADJUST" ],
+		[ "PHOENIXORTHO_SYMBOLS" ]
+    ],
+    "layout": "LAYOUT_phoenixortho_w"
+}
