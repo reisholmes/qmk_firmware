@@ -1,0 +1,12 @@
+{
+    "keyboard": "rainkeebs/rainkeeb",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMRK(RAINKEEB_BASE)" ],
+		[ "RAINKEEB_LOWER" ],
+		[ "RAINKEEB_RAISE" ],
+		[ "RAINKEEB_ADJUST" ],
+		[ "RAINKEEB_SYMBOLS" ]
+    ],
+	"layout": "LAYOUT_rainkeeb_w"
+}

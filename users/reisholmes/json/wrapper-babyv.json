@@ -1,0 +1,12 @@
+{
+    "keyboard": "eyeohdesigns/babyv",
+    "keymap": "reisholmes",
+    "layout": "LAYOUT_babyv_w",
+	"layers": [
+        [ "HRM(_BASE)", "_BASE_3KEY_BOTROW" ],
+		[ "_LOWER", "_LOWER_3KEY_BOTROW" ],
+		[ "_RAISE", "_RAISE_3KEY_BOTROW" ],
+		[ "_ADJUST", "_ADJUST_3KEY_BOTROW" ],
+		[ "_SYMBOLS", "_SYMBOLS_3KEY_BOTROW" ]
+    ]
+}

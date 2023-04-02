@@ -1,0 +1,12 @@
+{
+    "keyboard": "tominabox1/le_chiffre/rev2",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMLECHI(LECHI_BASE)" ],
+		[ "LECHI_LOWER" ],
+		[ "LECHI_RAISE" ],
+		[ "LECHI_ADJUST" ],
+		[ "LECHI_SYMBOLS" ]
+    ],
+	"layout": "LAYOUT_lechiffre_w"
+}

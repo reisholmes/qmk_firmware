@@ -1,0 +1,12 @@
+{
+    "keyboard": "ffkb/rgbmatrix_ec11",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMFFKB(FFKB_BASE)" ],
+		[ "FFKB_LOWER" ],
+		[ "FFKB_RAISE" ],
+		[ "FFKB_ADJUST" ],
+		[ "FFKB_SYMBOLS" ]
+    ],
+	"layout": "LAYOUT_ffkb_w"
+}

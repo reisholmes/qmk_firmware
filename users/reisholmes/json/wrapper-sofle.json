@@ -1,0 +1,13 @@
+{
+    "keyboard": "sofle/rev2",
+    "keymap": "reisholmes",
+    "layers": [
+		[ "HRMSOFLE(SOFLE_BASE)" ],
+		[ "SOFLE_LOWER" ],
+		[ "SOFLE_RAISE" ],
+		[ "SOFLE_ADJUST" ],
+		[ "SOFLE_SYMBOLS" ],
+		[ "SOFLE_GAME" ]
+    ],
+    "layout": "LAYOUT_sofle_w"
+}

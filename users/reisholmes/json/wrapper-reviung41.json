@@ -1,0 +1,12 @@
+{
+	"keyboard": "reviung/reviung41",
+	"keymap": "reisholmes",
+	"layers": [
+        [ "HRM(_BASE)", "R41_BASE_BOTROW" ],
+		[ "_LOWER", "R41_LOWER_BOTROW" ],
+		[ "_RAISE", "R41_RAISE_BOTROW" ],
+		[ "_ADJUST", "R41_ADJUST_BOTROW" ],
+		[ "_SYMBOLS", "R41_SYMBOLS_BOTROW" ]
+	],
+	"layout": "LAYOUT_reviung41_w"
+}

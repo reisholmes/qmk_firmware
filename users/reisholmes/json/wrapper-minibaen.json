@@ -1,0 +1,12 @@
+{
+    "keyboard": "minibaen",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMMB(MINIBAEN_DEFAULT)" ],
+		[ "MINIBAEN_LOWER" ],
+        [ "MINIBAEN_RAISE" ],
+        [ "MINIBAEN_ADJUST" ],
+		[ "MINIBAEN_SYMBOLS" ]
+	],
+    "layout": "LAYOUT_minibaen_w"
+}
