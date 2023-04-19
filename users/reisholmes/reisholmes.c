@@ -58,22 +58,54 @@ bool     is_alt_tab_active = false;
 uint16_t alt_tab_timer     = 0;
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (clockwise) {
-        if (!is_alt_tab_active) {
-            is_alt_tab_active = true;
-            register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        tap_code16(KC_TAB);
-    } else {
-        if (!is_alt_tab_active) {
-            is_alt_tab_active = true;
-            register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        tap_code16(S(KC_TAB));
-    }
-    return false;
+	#if defined(KEYBOARD_cisne)
+		if (index != 0) return 1;
+
+		int cur_layer = biton32(layer_state);
+		if (cur_layer == 3) {
+			if (clockwise) {
+				if (!is_alt_tab_active) {
+					is_alt_tab_active = true;
+					register_code(KC_LALT);
+				}
+				alt_tab_timer = timer_read();
+				tap_code16(KC_TAB);
+			} else {
+				if (!is_alt_tab_active) {
+					is_alt_tab_active = true;
+					register_code(KC_LALT);
+				}
+				alt_tab_timer = timer_read();
+				tap_code16(S(KC_TAB));
+			}
+			return false;
+		} 
+		else if (cur_layer == 2) {
+			clockwise ? tap_code(KC_UP) : tap_code(KC_DOWN);
+		}
+		else {
+			clockwise ? tap_code(KC_RIGHT) : tap_code(KC_LEFT);
+		}
+   		return 1;
+
+	#else
+		if (clockwise) {
+			if (!is_alt_tab_active) {
+				is_alt_tab_active = true;
+				register_code(KC_LALT);
+			}
+			alt_tab_timer = timer_read();
+			tap_code16(KC_TAB);
+		} else {
+			if (!is_alt_tab_active) {
+				is_alt_tab_active = true;
+				register_code(KC_LALT);
+			}
+			alt_tab_timer = timer_read();
+			tap_code16(S(KC_TAB));
+		}
+		return false;
+	#endif
 }
 
 void matrix_scan_user(void) {

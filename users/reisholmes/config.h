@@ -198,7 +198,11 @@
 		#define ENCODERS_PAD_B { F4 }
 		// Enable if encoder is on the left side
 		//#define ENCODER_DIRECTION_FLIP
-	# endif
+	#  endif
+	#  if defined(KEYBOARD_cisne)
+		#define ENCODERS_PAD_A { D2 }
+		#define ENCODERS_PAD_B { D3 }
+	#  endif
 #endif
 
 #ifdef COMBO_ENABLE

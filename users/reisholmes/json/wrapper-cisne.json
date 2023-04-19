@@ -1,0 +1,12 @@
+{
+    "keyboard": "cisne",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMCISNE(CISNE_BASE)" ],
+		[ "CISNE_LOWER" ],
+		[ "CISNE_RAISE" ],
+		[ "CISNE_ADJUST" ],
+		[ "CISNE_SYMBOLS" ]
+    ],
+	"layout": "LAYOUT_cisne_w"
+}
