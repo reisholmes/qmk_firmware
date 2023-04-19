@@ -24,6 +24,7 @@
 #define LAYOUT_rainkeeb_w(...) LAYOUT(__VA_ARGS__)
 #define LAYOUT_v4n_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_sofle_w(...) LAYOUT(__VA_ARGS__)
+#define LAYOUT_cisne_w(...) LAYOUT_0(__VA_ARGS__)
 
 // Home row mod-tap macros
 /// Home row mods are added to layers in wrapper-<kbname>.json 
@@ -126,7 +127,7 @@
    * |RgbMod|RbgHud|RgbSad|RgbVad|RgbSpd|   | Plus |  P1  |  P2  |  P3  | Ast  |
 */
 #define __ADJUST_NUMROW_L__  KC_NO,	TG(0),	TG(5),	KC_NO, KC_NO, KC_NO
-#define __ADJUST_L1__	RGB_TOG,    KC_NO,		KC_NUM,		RESET,		KC_PSCR      
+#define __ADJUST_L1__	RGB_TOG,    KC_NO,		KC_NUM,		QK_BOOT,		KC_PSCR      
 #define __ADJUST_L2__	RGB_RMOD,   RGB_HUI,	RGB_SAI,	RGB_VAI,	RGB_SPI
 #define __ADJUST_L3__	RGB_MOD,    RGB_HUD,	RGB_SAD,	RGB_VAD,	RGB_SPD
 
@@ -598,3 +599,47 @@
 	KC_TAB, __BASE_L2__,  __BASE_R2__, RSFT_T(KC_ENT), \
 	KC_LSFT, __BASE_L3__, KC_MUTE, SGUI(KC_S), __BASE_R3__, KC_RCTL, \
 	_BASE_5KEY_BOTROW
+
+
+// Cisne
+#define HRMCISNE(k) LAYOUT_cisne(k)
+#define LAYOUT_cisne( \
+    L00, L01, L02, L03, L04, L05,           R00, R01, R02, R03, R04, R05,	\
+    L10, L11, L12, L13, L14, L15,           R17, R18, R19, R20, R21, R22,	\
+    L20, L21, L22, L23, L24, L25,           R26, R27, R28, R29, R30, R31, R32,	\
+              L31, L33, L34,				R36, R37, R39, R311	\
+) \
+    L00, L01, L02, L03, L04, L05,			R00, R01, R02, R03, R04, R05,	\
+	L10, HRML(L11, L12, L13, L14), L15,		R17, HRMR(R18, R19, R20, R21), R22,	\
+	L20, L21, L22, L23, L24, L25,  			R26, R27, R28, R29, R30, R31, R32,	\
+              L31, L33, L34,				R36, R37, R39, R311
+
+#define CISNE_BASE \
+	__BASE_MOD_L1__, __BASE_L1__, __BASE_R1__, __BASE_MOD_R1__, \
+	__BASE_MOD_L2__, __BASE_L2__, __BASE_R2__, __BASE_MOD_R2__, \
+	__BASE_MOD_L3__, __BASE_L3__, KC_COPY, __BASE_R3__, __BASE_MOD_R3__, \
+	__BASE_3KEY_L_BOT__, MT(MOD_LSFT, KC_BSPC), __BASE_3KEY_R_BOT__
+
+#define CISNE_LOWER \
+	__BASE_MOD_L1__, __LOWER_L1__, __LOWER_R1__, __BASE_MOD_R1__, \
+	__BASE_MOD_L2__, __LOWER_L2__, __LOWER_R2__, __BASE_MOD_R2__, \
+	__BASE_MOD_L3__, __LOWER_L3__, KC_COPY, __LOWER_R3__, __BASE_MOD_R3__, \
+	__LOWER_3KEY_L_BOT__, MT(MOD_LSFT, KC_BSPC), __LOWER_3KEY_R_BOT__
+
+#define CISNE_RAISE \
+	__BASE_MOD_L1__, __RAISE_L1__, __RAISE_R1__, __BASE_MOD_R1__, \
+	__BASE_MOD_L2__, __RAISE_L2__, __RAISE_R2__, __BASE_MOD_R2__, \
+	__BASE_MOD_L3__, __RAISE_L3__, KC_COPY, __RAISE_R3__, __BASE_MOD_R3__, \
+	__RAISE_3KEY_L_BOT__, MT(MOD_LSFT, KC_BSPC), __RAISE_3KEY_R_BOT__
+
+#define CISNE_ADJUST \
+	__BASE_MOD_L1__, __ADJUST_L1__, __ADJUST_R1__, __BASE_MOD_R1__, \
+	__BASE_MOD_L2__, __ADJUST_L2__, __ADJUST_R2__, __BASE_MOD_R2__, \
+	__BASE_MOD_L3__, __ADJUST_L3__, KC_COPY, __ADJUST_R3__, __BASE_MOD_R3__, \
+	__ADJUST_3KEY_L_BOT__, MT(MOD_LSFT, KC_BSPC), __ADJUST_3KEY_R_BOT__
+
+#define CISNE_SYMBOLS \
+	__BASE_MOD_L1__, __SYMBOLS_L1__, __SYMBOLS_R1__, __BASE_MOD_R1__, \
+	__BASE_MOD_L2__, __SYMBOLS_L2__, __SYMBOLS_R2__, __BASE_MOD_R2__, \
+	__BASE_MOD_L3__, __SYMBOLS_L3__, KC_COPY, __SYMBOLS_R3__, __BASE_MOD_R3__, \
+	__SYMBOLS_3KEY_L_BOT__, MT(MOD_LSFT, KC_BSPC), __SYMBOLS_3KEY_R_BOT__

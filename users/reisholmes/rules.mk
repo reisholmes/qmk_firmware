@@ -22,7 +22,7 @@ VIA_ENABLE = no
 WPM_ENABLE = no
 
 # Common features enabled
-BOOTMAGIC_ENABLE 	= yes
+BOOTMAGIC_ENABLE = yes
 COMBO_ENABLE = yes
 EXTRAKEY_ENABLE = yes
 LTO_ENABLE = yes # Makes hex file smaller but breaks legacy macros
@@ -175,7 +175,15 @@ ifeq ($(strip $(KEYBOARD)), sofle/rev2)
 	SRC += bongocat.c oled-icons.c
 endif
 
+# ferris
 ifeq ($(strip $(KEYBOARD)), ferris/0_1 || ferris/0_2/compact)
 	MCU = atmega32u4
 	BOOTLOADER = atmel-dfu
+endif
+
+# cisne
+ifeq ($(strip $(KEYBOARD)), cisne)
+	BOOTLOADER		= atmel-dfu
+	ENCODER_ENABLE	= yes
+	MOUSEKEY_ENABLE	= yes	
 endif
