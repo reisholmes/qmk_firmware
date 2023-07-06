@@ -18,6 +18,7 @@
 #define LAYOUT_ffkb_w(...) LAYOUT_ffkb(__VA_ARGS__)
 #define LAYOUT_minibaen_w(...) LAYOUT(__VA_ARGS__)
 #define LAYOUT_modelv_w(...) LAYOUT_2x3u(__VA_ARGS__)
+#define LAYOUT_monorail2_w(...) LAYOUT(__VA_ARGS__)
 #define LAYOUT_phoenixortho_w(...) LAYOUT_ortho_2x3u(__VA_ARGS__)
 #define LAYOUT_reviung41_w(...) LAYOUT_reviung41(__VA_ARGS__)
 #define LAYOUT_ristretto_w(...) LAYOUT(__VA_ARGS__)
