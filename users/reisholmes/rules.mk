@@ -187,3 +187,8 @@ ifeq ($(strip $(KEYBOARD)), cisne)
 	ENCODER_ENABLE	= yes
 	MOUSEKEY_ENABLE	= yes	
 endif
+
+# monorail2
+ifeq ($(strip $(KEYBOARD)), monorail2)
+	RGB_MATRIX_ENABLE = yes
+endif
