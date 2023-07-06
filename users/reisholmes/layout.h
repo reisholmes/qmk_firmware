@@ -607,12 +607,12 @@
     L00, L01, L02, L03, L04, L05,           R00, R01, R02, R03, R04, R05,	\
     L10, L11, L12, L13, L14, L15,           R17, R18, R19, R20, R21, R22,	\
     L20, L21, L22, L23, L24, L25,           R26, R27, R28, R29, R30, R31, R32,	\
-              L31, L33, L34,				R36, R37, R39, R311	\
+              L31, L32, L34,				R36, R37, R39, R311	\
 ) \
     L00, L01, L02, L03, L04, L05,			R00, R01, R02, R03, R04, R05,	\
 	L10, HRML(L11, L12, L13, L14), L15,		R17, HRMR(R18, R19, R20, R21), R22,	\
 	L20, L21, L22, L23, L24, L25,  			R26, R27, R28, R29, R30, R31, R32,	\
-              L31, L33, L34,				R36, R37, R39, R311
+              L31, L32, L34,				R36, R37, R39, R311
 
 #define CISNE_BASE \
 	__BASE_MOD_L1__, __BASE_L1__, __BASE_R1__, __BASE_MOD_R1__, \
@@ -629,7 +629,7 @@
 #define CISNE_RAISE \
 	__BASE_MOD_L1__, __RAISE_L1__, __RAISE_R1__, __BASE_MOD_R1__, \
 	__BASE_MOD_L2__, __RAISE_L2__, __RAISE_R2__, __BASE_MOD_R2__, \
-	__BASE_MOD_L3__, __RAISE_L3__, KC_COPY, __RAISE_R3__, __BASE_MOD_R3__, \
+	__BASE_MOD_L3__, __RAISE_L3__, KC_PSTE, __RAISE_R3__, __BASE_MOD_R3__, \
 	__RAISE_3KEY_L_BOT__, MT(MOD_LSFT, KC_BSPC), __RAISE_3KEY_R_BOT__
 
 #define CISNE_ADJUST \
