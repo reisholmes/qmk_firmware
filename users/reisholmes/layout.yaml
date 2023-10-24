@@ -1,0 +1,59 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x5_3
+layers:
+  BSE:
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [{h: LShift, t: A}, {h: LCtrl, t: S}, {h: LGui, t: D}, {h: LAlt, t: F}, G, H, {h: RAlt, t: J}, {h: RGui, t: K}, {h: RCtrl, t: L}, {h: RShift, t: "'"}]
+    - [Z, X, C, V, B, N, M, ",", ., /]
+    - {h: ADJ, t: Esc}
+    - {h: ADJ,  t: Tab}
+    - {h: RSE,   t: BSpace}
+    - {h: LWR,   t: Space}
+    - {h: SYM, t: Delete}
+    - {h: SYM,   t: \}
+  LWR:
+    - [MNXT, C(S(KC_LEFT)), S(KC_HOME), S(KC_END), C(S(KC_RGHT)), "Home", "PgDn", "PgUp", "End", "M_Btn3"]
+    - [MPLY, WH_L, WH_D, WH_U, WH_R, "Left", "Down", "Up", "Right", "M_Btn1"]
+    - [MPRV, CUT, COPY, PSTE, null, "M_Le", "M_Do", "M_Up", "M_Ri", "M_Btn2"]
+    - Null
+    - Esc
+    - Enter
+    - Null
+    - Null
+    - Null
+  RSE:
+    - ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+    - ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    - ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10"]
+    - Null
+    - F11
+    - Null
+    - Enter
+    - F12
+    - Null
+  ADJ:
+    - ["RgbTog", Null, "NumLck", "Reset", "PrtScr", "Minus", "P7", "P8", "P9", "Slash"]
+    - ["RgbRMo", "RgbHui", "RgbSai", "RgbVai", "RgbSpi", "P0", "P4", "P5", "P6", "Dot"]
+    - ["RgbMod", "RgbHud", "RgbSad", "RgbVad", "RgbSpd", "Plus", "P1", "P2", "P3", "Ast"]
+    - Null
+    - Tab
+    - Bspace
+    - Null
+    - PENT
+    - \
+  SYM:
+    - ["[", "{", Null, Null, Null, Null, Null, Null, "}", "]"]
+    - ["`", Null, Null, Null, Null, Null, Null, Null, Null, "'"]
+    - ["-", Null, Null, Null, Null, Null, Null, Null, Null, "="]
+    - Esc
+    - Tab
+    - Bspace
+    - Space
+    - Del
+    - Null
+combos:
+  - {p: [0, 1], k: "Esc", l: ["BSE"]}
+  - {p: [18, 19], k: "'", l: ["BSE"]}
+  - {p: [20, 21], k: "-", l: ["BSE"]}
+  - {p: [28, 29], k: \, l: ["BSE"]}
