@@ -13,7 +13,7 @@
 #define LAYER_STATE_8BIT // 8-layer limit, saves ~462 bytes
 
 // Tapping Terms
-#define IGNORE_MOD_TAP_INTERRUPT
+// #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_TERM 185
 #define TAPPING_TERM_PER_KEY
 #define PERMISSIVE_HOLD

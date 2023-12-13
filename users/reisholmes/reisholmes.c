@@ -1,7 +1,7 @@
 #include "reisholmes.h"
 
 // Combos
-#ifdef COMBO_ENABLE
+/*#ifdef COMBO_ENABLE
 	const uint16_t PROGMEM esc[]         = {KC_Q, KC_W, COMBO_END};
 	const uint16_t PROGMEM singlequote[] = {RCTL_T(KC_L), RSFT_T(KC_SCLN), COMBO_END};
 	const uint16_t PROGMEM minus[]       = {KC_Z, KC_X, COMBO_END};
@@ -15,6 +15,7 @@
 	};
 	uint16_t COMBO_LEN = sizeof(key_combos) / sizeof(key_combos[0]);
 #endif
+*/
 
 bool process_record_user(uint16_t const keycode, keyrecord_t *record) {
 #ifdef SPLIT_MODS_ENABLE // Reset typing timer for OLED animation

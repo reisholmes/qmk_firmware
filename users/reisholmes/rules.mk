@@ -29,6 +29,9 @@ LTO_ENABLE = yes # Makes hex file smaller but breaks legacy macros
 MOUSEKEY_ENABLE = yes
 NKRO_ENABLE = yes
 
+# Needed for combos location
+# https://github.com/qmk/qmk_firmware/issues/21137
+INTROSPECTION_KEYMAP_C = combos.c
 
 # Main source file
 SRC += reisholmes.c
