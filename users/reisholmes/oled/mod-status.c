@@ -21,7 +21,7 @@
    (keyboards/crkbd/keymaps/soundmonster)
 */
 
-#include "reisholmes.h"
+#include "../reisholmes.h"
 
 
 static void render_logo(void) {

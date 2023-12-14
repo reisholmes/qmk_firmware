@@ -3,6 +3,7 @@ AUDIO_ENABLE = no
 CONSOLE_ENABLE = no
 COMMAND_ENABLE = no
 ENCODER_ENABLE = no
+ENCODER_MAP_ENABLE = no
 GRAVE_ESC_ENABLE = no 
 KEY_LOCK_ENABLE = no
 LEADER_ENABLE = no
@@ -31,7 +32,7 @@ NKRO_ENABLE = yes
 
 # Needed for combos location
 # https://github.com/qmk/qmk_firmware/issues/21137
-INTROSPECTION_KEYMAP_C = combos.c
+INTROSPECTION_KEYMAP_C = combos/combos.c
 
 # Main source file
 SRC += reisholmes.c
@@ -49,7 +50,7 @@ else ifeq ($(KEYBOARD) $(WPM), crkbd/rev1 yes)
 	OLED_ENABLE				= yes
 	RGB_MATRIX_ENABLE  		= yes
 	WPM_ENABLE 		   		= yes
-	SRC += bongocat.c oled-icons.c
+	SRC += oled/bongocat.c oled/oled-icons.c
 
 # My corne has eyes-c on left and pro-micro on right
 	ifeq ($(RIGHT), yes)
@@ -68,7 +69,7 @@ else ifeq ($(KEYBOARD) $(WPM), crkbd/rev1 yes)
 # Primary tap-driven animation with secondary mod status
 else ifeq ($(strip $(KEYBOARD)), crkbd/rev1)
 	OLED_ENABLE = yes
-	SRC += oled-icons.c bongocat.c
+	SRC += oled/oled-icons.c oled/bongocat.c
 endif
 
 # Reviung39 keyboard features
@@ -107,7 +108,7 @@ ifeq ($(strip $(KEYBOARD)), ristretto)
 	MCU 				= atmega32u4
 	OLED_ENABLE 	    = yes
 	WPM_ENABLE 		   	= yes
-	SRC += bongocat.c
+	SRC += oled/bongocat.c
 endif
 
 # Minibaen keyboard features
@@ -164,7 +165,7 @@ ifeq ($(strip $(KEYBOARD)), lily58/rev1)
 	OLED_ENABLE				= yes
 	RGBLIGHT_ENABLE 		= yes
 	WPM_ENABLE 		   		= yes
-	SRC += bongocat.c oled-icons.c
+	SRC += oled/bongocat.c oled/oled-icons.c
 endif
 
 # sofle
@@ -175,7 +176,7 @@ ifeq ($(strip $(KEYBOARD)), sofle/rev2)
 	OLED_ENABLE				= yes
 	RGBLIGHT_ENABLE 		= yes
 	WPM_ENABLE 		   		= yes
-	SRC += bongocat.c oled-icons.c
+	SRC += oled/bongocat.c oled/oled-icons.c
 endif
 
 # ferris
@@ -194,4 +195,11 @@ endif
 # monorail2
 ifeq ($(strip $(KEYBOARD)), monorail2)
 	RGB_MATRIX_ENABLE = yes
+endif
+
+# vault35rp
+ifeq ($(strip $(KEYBOARD)), projectcain/vault35rp)
+	ENCODER_ENABLE = yes
+	RGBLIGHT_ENABLE = yes
+	WS2812_DRIVER = vendor
 endif

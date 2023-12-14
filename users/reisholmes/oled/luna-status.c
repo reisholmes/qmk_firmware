@@ -25,7 +25,7 @@
    (https://github.com/ItsWaffIe/waffle_corne/blob/proton-c/firmware/oled.c)
 */
 
-#include "reisholmes.h"
+#include "../reisholmes.h"
 
 #define LUNA_FRAMES 2
 #define LUNA_FRAME_DURATION 200 // Number of ms between frames

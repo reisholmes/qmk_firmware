@@ -1,12 +1,12 @@
 {
     "keyboard": "projectcain/vault35rp",
     "keymap": "reisholmes",
-    "layout": "LAYOUT_36key_w",
+    "layout": "LAYOUT_vault35rp_w",
 	"layers": [
-        [ "HRM(_BASE)", "_BASE_3KEY_BOTROW" ],
-		[ "_LOWER", "_LOWER_3KEY_BOTROW" ],
-		[ "_RAISE", "_RAISE_3KEY_BOTROW" ],
-		[ "_ADJUST", "_ADJUST_3KEY_BOTROW" ],
-		[ "_SYMBOLS", "_SYMBOLS_3KEY_BOTROW" ]
+        [ "HRMVAULT35RP(VAULT35RP_BASE)" ],
+		[ "VAULT35RP_LOWER" ],
+		[ "VAULT35RP_RAISE" ],
+		[ "VAULT35RP_ADJUST" ],
+		[ "VAULT35RP_SYMBOLS" ]	
     ]
 }

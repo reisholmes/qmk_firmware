@@ -20,7 +20,7 @@
 */
 
 #include QMK_KEYBOARD_H
-#include "reisholmes.h"
+#include "../reisholmes.h"
 
 
 //let's define some fun for oled writing

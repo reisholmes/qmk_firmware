@@ -1,5 +1,5 @@
 #include "quantum.h"
-#include "layout.h"
+#include "../layout.h"
 #include QMK_KEYBOARD_H
 #include "analog.h"
 

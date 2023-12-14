@@ -1,5 +1,5 @@
 #include "quantum.h"
-#include "layout.h"
+#include "../layout.h"
 
 // controls for top led
 // led order is:
