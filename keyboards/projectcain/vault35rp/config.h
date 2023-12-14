@@ -19,7 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-
 #define MATRIX_ROW_PINS { 07, 01, 23, 22}
 #define MATRIX_COL_PINS { 00, 29, 17, 28, 27, 26, 25, 24, 03, 02, 06 }
 /*

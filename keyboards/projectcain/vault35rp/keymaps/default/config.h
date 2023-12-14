@@ -18,8 +18,8 @@
 #define COMBO_COUNT 9
 #define COMBO_TERM 50
 #define TAPPING_FORCE_HOLD
-//define ENCODERS_PAD_A { 05 }
-//#define ENCODERS_PAD_B { 04 }
+#define ENCODERS_PAD_A { 05 }
+#define ENCODERS_PAD_B { 04 }
 #define WS2812_DI_PIN 16
 #define RGBLED_NUM 62 // Number of LEDs
 #define RGBLIGHT_EFFECT_BREATHING

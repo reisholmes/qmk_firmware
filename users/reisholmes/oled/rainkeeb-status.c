@@ -1,4 +1,4 @@
-#include "reisholmes.h"
+#include "../reisholmes.h"
 
 bool oled_task_user(void) {
     oled_write_P(PSTR("WPM: "), false);
