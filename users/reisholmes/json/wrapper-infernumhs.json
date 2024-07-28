@@ -1,0 +1,12 @@
+{
+    "keyboard": "infernumhs",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMINFERNUMHS(INFERNUMHS_BASE)" ],
+		[ "INFERNUMHS_LOWER" ],
+		[ "INFERNUMHS_RAISE" ],
+		[ "INFERNUMHS_ADJUST" ],
+		[ "INFERNUMHS_SYMBOLS" ]
+    ],
+	"layout": "LAYOUT_infernumhs_w"
+}

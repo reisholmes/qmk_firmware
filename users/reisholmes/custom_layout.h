@@ -418,3 +418,53 @@
 	__SYMBOLS_L2__, __SYMBOLS_R2__, \
 	__SYMBOLS_L3__, __SYMBOLS_R3__, \
 	__SYMBOLS_3KEY_L_BOT__, KC_SPACE, __SYMBOLS_3KEY_R_BOT__
+
+
+// InfernumHs
+// Encoder optional at top or bottom
+#define HRMINFERNUMHS(k) LAYOUT_infernumhs(k)
+#define LAYOUT_infernumhs( \
+  K00, K01, K02, K03, K04, K31, K05, K06, K07, K08, K09, \
+  K10, K11, K12, K13, K14,      K15, K16, K17, K18, K19, \
+  K20, K21, K22, K23, K24,      K25, K26, K27, K28, K29, \
+            K32, K33, K34, K35, K36, K37, K39       \
+) \
+  K00, K01, K02, K03, K04, K31, K05, K06, K07, K08, K09, \
+  HRML(K10, K11, K12, K13), K14, K15, HRMR(K16, K17, K18, K19), \
+  K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, \
+  K32, K33, K34, K35, K36, K37, K39
+
+#define INFERNUMHS_BASE \
+	__BASE_L1__, LCA(KC_TAB), __BASE_R1__,  \
+	__BASE_L2__, __BASE_R2__, \
+	__BASE_L3__, __BASE_R3__, \
+   LT(3, KC_TAB), KC_NO, LT(2, KC_BSPC), LT(1, KC_SPC), KC_NO, LT(4, KC_DEL), \
+   LT(3, KC_ESC)
+
+#define INFERNUMHS_LOWER \
+	__LOWER_L1__,  KC_MUTE, __LOWER_R1__, \
+	__LOWER_L2__, __LOWER_R2__, \
+	__LOWER_L3__, __LOWER_R3__, \
+	KC_ESC, KC_NO, KC_DEL, KC_TRNS, KC_NO, KC_TRNS, \
+	KC_TRNS
+
+#define INFERNUMHS_RAISE \
+	__RAISE_L1__, KC_MUTE, __RAISE_R1__, \
+	__RAISE_L2__, __RAISE_R2__, \
+	__RAISE_L3__, __RAISE_R3__, \
+	KC_F11,	KC_NO, KC_TRNS, KC_ENT, KC_NO, KC_TRNS, \
+	KC_TRNS
+
+#define INFERNUMHS_ADJUST \
+	__ADJUST_L1__, KC_MUTE, __ADJUST_R1__, \
+	__ADJUST_L2__, __ADJUST_R2__, \
+	__ADJUST_L3__, __ADJUST_R3__, \
+	KC_TRNS, KC_NO, KC_BSPC, KC_SPC, KC_NO, KC_PENT, \
+	KC_TRNS
+
+#define INFERNUMHS_SYMBOLS \
+	__SYMBOLS_L1__,  KC_MUTE, __SYMBOLS_R1__, \
+	__SYMBOLS_L2__, __SYMBOLS_R2__, \
+	__SYMBOLS_L3__, __SYMBOLS_R3__, \
+	KC_TAB,	KC_NO, KC_BSPC, KC_SPC, KC_NO, KC_TRNS, \
+	KC_TRNS

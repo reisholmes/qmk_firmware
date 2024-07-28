@@ -1,34 +1,5 @@
 #include "reisholmes.h"
 
-// Combos
-/*#ifdef COMBO_ENABLE
-	const uint16_t PROGMEM esc[]         = {KC_Q, KC_W, COMBO_END};
-	const uint16_t PROGMEM singlequote[] = {RCTL_T(KC_L), RSFT_T(KC_SCLN), COMBO_END};
-	const uint16_t PROGMEM minus[]       = {KC_Z, KC_X, COMBO_END};
-	const uint16_t PROGMEM backslash[]   = {KC_DOT, KC_SLSH, COMBO_END};
-
-	combo_t key_combos[] = {
-		COMBO(esc, KC_ESC),
-		COMBO(singlequote, KC_QUOT),
-		COMBO(minus, KC_MINS),
-		COMBO(backslash, KC_BSLS),
-	};
-	uint16_t COMBO_LEN = sizeof(key_combos) / sizeof(key_combos[0]);
-#endif
-*/
-
-bool process_record_user(uint16_t const keycode, keyrecord_t *record) {
-#ifdef SPLIT_MODS_ENABLE // Reset typing timer for OLED animation
-    if (record->event.pressed) {
-#    if defined(OLED_ENABLE) && !defined(WPM_ENABLE)
-        extern uint32_t tap_timer;
-        tap_timer = timer_read32(); // Reset OLED animation tap timer
-#    endif
-    }
-#endif
-    return true; // Continue with unmatched keycodes
-}
-
 #ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {

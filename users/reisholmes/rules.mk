@@ -203,3 +203,8 @@ ifeq ($(strip $(KEYBOARD)), projectcain/vault35rp)
 	RGBLIGHT_ENABLE = yes
 	WS2812_DRIVER = vendor
 endif
+
+# infernum
+ifeq ($(strip $(KEYBOARD)), infernumhs)
+	RGB_MATRIX_ENABLE = yes
+endif
