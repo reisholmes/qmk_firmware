@@ -1,0 +1,8 @@
+{
+    "keyboard": "kiserdesigns/madeline",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMMADELINE(MADELINE_BASE)" ]
+    ],
+	"layout": "LAYOUT_madeline_w",
+}

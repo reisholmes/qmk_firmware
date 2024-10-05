@@ -468,3 +468,43 @@
 	__SYMBOLS_L3__, __SYMBOLS_R3__, \
 	KC_TAB,	KC_NO, KC_BSPC, KC_SPC, KC_NO, KC_TRNS, \
 	KC_TRNS
+
+// Madeline
+#define HRMMADELINE(k) LAYOUT_madeline(k)
+#define LAYOUT_madeline( \
+    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09,	\
+    K10, K11, K12, K13, K14, K15, K16, K17, K18, K19,	\
+    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, 	\
+	K30, 	 K31, K33,		 K36, K37, 			 K39	\
+)\
+    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09,	\
+    HRML(K10, K11, K12, K13), K14, K15, HRMR(K16, K17, K18, K19),	\
+    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, 	\
+	K30, 	 K31, K33,		 K36, K37, 			 K39	
+
+#define MADELINE_BASE \
+	__BASE_L1__, __BASE_R1__, \
+	__BASE_L2__, __BASE_R2__, \
+	__BASE_L3__, LCA(KC_TAB), KC_N, KC_M, KC_COMMA, KC_DOT, \
+	__BASE_3KEY_L_BOT__,  __BASE_3KEY_R_BOT__ 
+// Detour
+// 3u layout
+#define HRMDETOUR(k) LAYOUT_detour(k)
+#define LAYOUT_detour( \
+    k58,                                k59, k68, k69, k78,\
+    k00, k01, k10, k11, k20, k21, k30, k31, k40, k41, k47, \
+     k02,  k03, k12, k13, k22, k23, k32, k33, k42,  k43,    \
+      k04  , k05, k14, k15, k24, k25, k34, k35, k44,  k45,  \
+     k06,  k07,  k16, k17, k27, k36, k37, k46 \
+) { \
+    { k00, k10, k20, k30, k40, KC_NO, KC_NO, KC_NO }, \
+    { k01, k11, k21, k31, k41, KC_NO, KC_NO, KC_NO }, \
+    { k02, k12, k22, k32, k42, KC_NO, KC_NO, KC_NO }, \
+    { k03, k13, k23, k33, k43, KC_NO, KC_NO, KC_NO }, \
+    { k04, k14, k24, k34, k44, KC_NO, KC_NO, KC_NO }, \
+    { k05, k15, k25, k35, k45, KC_NO, KC_NO, KC_NO }, \
+    { k06, k16, XXX, k36, k46, KC_NO, KC_NO, KC_NO }, \
+    { k07, k17, k27, k37, k47, KC_NO, KC_NO, KC_NO }, \
+    { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, k58, k68, k78 }, \
+    { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, k59, k69, KC_NO } \
+}

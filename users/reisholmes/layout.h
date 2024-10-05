@@ -32,6 +32,7 @@
 #define LAYOUT_v4n_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_vault35rp_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_infernumhs_w(...)  LAYOUT(__VA_ARGS__)
+#define LAYOUT_madeline_w(...)  LAYOUT(__VA_ARGS__)
 
 // Home row mod-tap macros
 /// Home row mods are added to layers in wrapper-<kbname>.json 
