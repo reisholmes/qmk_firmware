@@ -211,4 +211,6 @@ endif
 
 # madeline
 ifeq ($(strip $(KEYBOARD)), kiserdesigns/madeline)
+	ENCODER_ENABLE	= yes
+	MOUSEKEY_ENABLE	= yes
 endif
