@@ -485,7 +485,7 @@
 #define MADELINE_BASE \
 	__BASE_L1__, __BASE_R1__, \
 	__BASE_L2__, __BASE_R2__, \
-	__BASE_L3__, KC_COPY, KC_N, KC_M, KC_COMMA, KC_DOT, \
+	__BASE_L3__, CW_TOGG, KC_N, KC_M, KC_COMMA, KC_DOT, \
 	__BASE_3KEY_L_BOT__,  __BASE_3KEY_R_BOT__ 
 
 #define MADELINE_LOWER \

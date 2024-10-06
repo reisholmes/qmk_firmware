@@ -30,7 +30,7 @@ bool     is_alt_tab_active = false;
 uint16_t alt_tab_timer     = 0;
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-#if defined(KEYBOARD_cisne)|(KEYBOARD_kiserdesigns_madeline)
+	#if defined(KEYBOARD_cisne)|(KEYBOARD_kiserdesigns_madeline)
 		if (index != 0) return 1;
 
 		int cur_layer = biton32(layer_state);
@@ -58,7 +58,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 		else {
 			clockwise ? tap_code(KC_RIGHT) : tap_code(KC_LEFT);
 		}
-   		return 1;
+   		return false;
 
 	#else
 		if (clockwise) {
