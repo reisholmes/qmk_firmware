@@ -208,3 +208,7 @@ endif
 ifeq ($(strip $(KEYBOARD)), infernumhs)
 	RGB_MATRIX_ENABLE = yes
 endif
+
+# madeline
+ifeq ($(strip $(KEYBOARD)), kiserdesigns/madeline)
+endif

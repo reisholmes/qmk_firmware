@@ -2,7 +2,11 @@
     "keyboard": "kiserdesigns/madeline",
     "keymap": "reisholmes",
     "layers": [
-        [ "HRMMADELINE(MADELINE_BASE)" ]
+        [ "HRMMADELINE(MADELINE_BASE)" ],
+		[ "MADELINE_LOWER" ],
+		[ "MADELINE_RAISE" ],
+		[ "MADELINE_ADJUST" ],
+		[ "MADELINE_SYMBOLS" ]
     ],
 	"layout": "LAYOUT_madeline_w",
 }

@@ -485,8 +485,33 @@
 #define MADELINE_BASE \
 	__BASE_L1__, __BASE_R1__, \
 	__BASE_L2__, __BASE_R2__, \
-	__BASE_L3__, LCA(KC_TAB), KC_N, KC_M, KC_COMMA, KC_DOT, \
+	__BASE_L3__, KC_COPY, KC_N, KC_M, KC_COMMA, KC_DOT, \
 	__BASE_3KEY_L_BOT__,  __BASE_3KEY_R_BOT__ 
+
+#define MADELINE_LOWER \
+	__LOWER_L1__, __LOWER_R1__, \
+	__LOWER_L2__, __LOWER_R2__, \
+	__LOWER_L3__, KC_BTN2, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,  \
+	__LOWER_3KEY_L_BOT__, __LOWER_3KEY_R_BOT__
+
+#define MADELINE_RAISE \
+	__RAISE_L1__, __RAISE_R1__, \
+	__RAISE_L2__, __RAISE_R2__, \
+	__RAISE_L3__, __RAISE_R3__, \
+	__RAISE_3KEY_L_BOT__, __RAISE_3KEY_R_BOT__
+
+#define MADELINE_ADJUST \
+	__ADJUST_L1__, __ADJUST_R1__, \
+	__ADJUST_L2__, __ADJUST_R2__, \
+	__ADJUST_L3__, __ADJUST_R3__, \
+	__ADJUST_3KEY_L_BOT__, __ADJUST_3KEY_R_BOT__
+
+#define MADELINE_SYMBOLS \
+	__SYMBOLS_L1__, __SYMBOLS_R1__, \
+	__SYMBOLS_L2__, __SYMBOLS_R2__, \
+	__SYMBOLS_L3__, __SYMBOLS_R3__, \
+	__SYMBOLS_3KEY_L_BOT__, __SYMBOLS_3KEY_R_BOT__
+
 // Detour
 // 3u layout
 #define HRMDETOUR(k) LAYOUT_detour(k)
