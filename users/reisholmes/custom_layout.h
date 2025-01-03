@@ -536,6 +536,7 @@
 
 
 // Waterfoul
+// compile with qmk compile users/reisholmes/json/wrapper-waterfowl.json -e CONVERT_TO=rp2040_ce
 #define HRMWATERFOWL(k) LAYOUT_waterfowl(k)
 #define LAYOUT_waterfowl( \
     K00, K01, K02, K03, K04, K05, K06, K07, K08, K09,	\
