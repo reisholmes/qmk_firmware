@@ -533,3 +533,47 @@
     { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, k58, k68, k78 }, \
     { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, k59, k69, KC_NO } \
 }
+
+
+// Waterfoul
+#define HRMWATERFOWL(k) LAYOUT_waterfowl(k)
+#define LAYOUT_waterfowl( \
+    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09,	\
+    K10, K11, K12, K13, K14, K15, K16, K17, K18, K19,	\
+    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, 	\
+	K30,   K31, K32, KC33,   KC34, KC35,   KC36, KC37, KC38,  K39	\
+)\
+    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09,	\
+    HRML(K10, K11, K12, K13), K14, K15, HRMR(K16, K17, K18, K19),	\
+    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, 	\
+	K30,   K31, K32, KC33,   KC34, KC35,   KC36, KC37, KC38,  K39
+
+#define WATERFOWL_BASE \
+	__BASE_L1__, __BASE_R1__, \
+	__BASE_L2__, __BASE_R2__, \
+	__BASE_L3__, __BASE_R3__, \
+	KC_1, __BASE_3KEY_L_BOT__, KC_CAPS, KC_NUM, __BASE_3KEY_R_BOT__, KC_4
+
+#define WATERFOWL_LOWER \
+	__LOWER_L1__, __LOWER_R1__, \
+	__LOWER_L2__, __LOWER_R2__, \
+	__LOWER_L3__, __LOWER_R3__, \
+	KC_1, __LOWER_3KEY_L_BOT__, KC_CAPS, KC_NUM, __LOWER_3KEY_R_BOT__, KC_4
+
+#define WATERFOWL_RAISE \
+	__RAISE_L1__, __RAISE_R1__, \
+	__RAISE_L2__, __RAISE_R2__, \
+	__RAISE_L3__, __RAISE_R3__, \
+	KC_1, __RAISE_3KEY_L_BOT__, KC_CAPS, KC_NUM, __RAISE_3KEY_R_BOT__, KC_4
+
+#define WATERFOWL_ADJUST \
+	__ADJUST_L1__, __ADJUST_R1__, \
+	__ADJUST_L2__, __ADJUST_R2__, \
+	__ADJUST_L3__, __ADJUST_R3__, \
+	KC_1, __ADJUST_3KEY_L_BOT__, KC_CAPS, KC_NUM, __ADJUST_3KEY_R_BOT__, KC_4
+
+#define WATERFOWL_SYMBOLS \
+	__SYMBOLS_L1__, __SYMBOLS_R1__, \
+	__SYMBOLS_L2__, __SYMBOLS_R2__, \
+	__SYMBOLS_L3__, __SYMBOLS_R3__, \
+	KC_1, __SYMBOLS_3KEY_L_BOT__, KC_CAPS, KC_NUM, __SYMBOLS_3KEY_R_BOT__, KC_4

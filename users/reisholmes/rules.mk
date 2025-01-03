@@ -215,3 +215,7 @@ ifeq ($(strip $(KEYBOARD)), kiserdesigns/madeline)
 	ENCODER_ENABLE	= yes
 	MOUSEKEY_ENABLE	= yes
 endif
+
+#waterfowl
+ifeq ($(strip $(KEYBOARD)), waterfowl)
+endif

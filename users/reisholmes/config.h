@@ -194,12 +194,14 @@
 #ifdef OLED_ENABLE
 #   if defined(KEYBOARD_rainkeeb)
 #	  define OLED_TIMEOUT 60000
+#   elif defined(KEYBOARD_waterfowl)
+#	  define OLED_TIMEOUT 60000
 #   else
 #	  define OLED_TIMEOUT 60000
 #	  define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
 #	  define OLED_UPDATE_INTERVAL 50
 #	  define OLED_BRIGHTNESS 180
-#	  define OLED_FONT_H "oledfont.c"
+#	  define OLED_FONT_H "oled/oledfont.c"
 #	  ifndef WPM_ENABLE
 #		define SPLIT_MODS_ENABLE
 #	  endif
@@ -226,7 +228,7 @@
 	#  if defined(KEYBOARD_projectcain_vault35rp)
 		#define ENCODERS_PAD_A { 05 }
 		#define ENCODERS_PAD_B { 04 }
-	#  endif	
+	#  endif
 #endif
 
 #ifdef COMBO_ENABLE

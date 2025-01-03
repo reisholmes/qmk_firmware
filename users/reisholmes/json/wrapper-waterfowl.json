@@ -1,0 +1,12 @@
+{
+    "keyboard": "waterfowl",
+    "keymap": "reisholmes",
+    "layers": [
+        [ "HRMWATERFOWL(WATERFOWL_BASE)" ],
+		[ "WATERFOWL_LOWER" ],
+		[ "WATERFOWL_RAISE" ],
+		[ "WATERFOWL_ADJUST" ],
+		[ "WATERFOWL_SYMBOLS" ]
+    ],
+	"layout": "LAYOUT_waterfowl_w"
+}
