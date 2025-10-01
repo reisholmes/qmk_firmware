@@ -119,3 +119,7 @@ via*.json
 lib/pico-sdk
 lib/chibios-contrib
 **/chibios
+lib
+lib
+lib/chibios
+lib/pico-sdk

@@ -1,0 +1,22 @@
+{
+  "keyboard": "infernum",
+  "keymap": "reisholmes",
+  "layers": [
+    [
+      "HRMINFERNUM(INFERNUM_BASE)"
+    ],
+    [
+      "INFERNUM_LOWER"
+    ],
+    [
+      "INFERNUM_RAISE"
+    ],
+    [
+      "INFERNUM_ADJUST"
+    ],
+    [
+      "INFERNUM_SYMBOLS"
+    ]
+  ],
+  "layout": "LAYOUT_infernum_w"
+}

@@ -31,6 +31,7 @@
 #define LAYOUT_sofle_w(...) LAYOUT(__VA_ARGS__)
 #define LAYOUT_v4n_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_vault35rp_w(...)  LAYOUT(__VA_ARGS__)
+#define LAYOUT_infernum_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_infernumhs_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_madeline_w(...)  LAYOUT(__VA_ARGS__)
 #define LAYOUT_waterfowl_w(...)  LAYOUT(__VA_ARGS__)
