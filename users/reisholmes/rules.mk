@@ -1,5 +1,6 @@
 # Disable unused features
 AUDIO_ENABLE = no
+BACKLIGHT_ENABLE = no
 CONSOLE_ENABLE = no
 COMMAND_ENABLE = no
 ENCODER_ENABLE = no
@@ -11,6 +12,7 @@ MAGIC_ENABLE = no
 MUSIC_ENABLE = no
 RGBLIGHT_ENABLE = no
 RGB_MATRIX_ENABLE = no
+SEND_STRING_ENABLE = no
 SLEEP_LED_ENABLE = no
 SPACE_CADET_ENABLE = no
 STENO_ENABLE = no
@@ -140,21 +142,19 @@ endif
 
 # v4n4g0n
 ifeq ($(strip $(KEYBOARD)), thevankeyboards/v4n4g0n)
-	SRC += v4n4g0n.c
-	COMBO_ENABLE = no
+	SRC += rgb/v4n4g0n.c
 endif
 
 # v4n4g0rth0n
 ifeq ($(strip $(KEYBOARD)), v4n4g0rth0n/v2)
-	SRC += v4n4g0rth0n.c
-	COMBO_ENABLE = no
+	SRC += rgb/v4n4g0rth0n.c
 endif
 
 # le chiffre
 ifeq ($(strip $(KEYBOARD)), tominabox1/le_chiffre/rev2)
 	ENCODER_ENABLE = yes
 	RGB_MATRIX_ENABLE = yes
-	SRC += lechiffre.c
+	SRC += rgb/lechiffre.c
 endif 
 
 # lily58

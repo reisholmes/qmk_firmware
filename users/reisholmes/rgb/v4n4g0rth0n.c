@@ -12,6 +12,11 @@ void keyboard_post_init_user(void) {
     setPinOutput(B4);                                                                           
     setPinOutput(D7);  
 	setPinOutput(D6);	
+
+	// Initializes LEDs to default layer at startup
+	writePinHigh(B4);
+	writePinLow(D7);
+	writePinLow(D6);
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -50,6 +55,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 	return state;
 };
 
+// Overrides QMK's automatic LED control to allow above layer code to work
+bool led_update_user(led_t led_state) {
+	return false;
+}
 
 //slider
 int16_t max_pot_val = 1023;
